@@ -2,17 +2,23 @@
 body{
     font-family: 'Roboto';
     color:#020f38;
-    background: url("../images/bg-blue.jpg");
-     height:100vh; 
-    }
+   }
 .container {
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        width: 1000px;
+        width: 1200px;
         height: 100%;
         background-color:#ffffff;
       }
+    .hero{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1200px;
+        height: 100%;  
+        padding-top: 50px;
+    }  
 /* Header settings */
 header {
     padding-bottom: 100px;
