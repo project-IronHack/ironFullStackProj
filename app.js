@@ -8,6 +8,7 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 
 var users = require('./routes/users');
+var sitters = require("./routes/sitters");
 
 const app = express();
 
@@ -81,7 +82,34 @@ passport.use(new GoogleStrategy({
 
 //********************** Google login ********************
 
+//********************** Instagram login ******************
+const InstagramStrategy = require('passport-instagram').Strategy;
 
+passport.use(new InstagramStrategy({
+  clientID: "09b0c2dfa4ac4738bfeb6a6c7784adf9",
+  clientSecret: "075fb81547ca4496a2eeb426638b6e5d",
+  callbackURL: "/auth/instagram/callback"
+},
+function(accessToken, refreshToken, profile, done) {
+  User.findOne({ instagramID: profile.id }, function (err, user) {
+    return done(err, user);
+    console.log(profile);
+      if(err) return done(err);
+      if(user) return done(null,user);
+      const newUser = new User({
+          instagramID:profile.id,
+          displayName:profile.displayName,
+          email:profile.emails.length > 0 ? profile.emails[0].value : null
+      })
+      newUser.save((err)=>{
+        if(err) return done(err);
+        done(null, newUser);
+      });
+  });
+}
+));
+
+//********************** Instagram login ******************
 
 //********************************** passport ****************
 //flash for errors
@@ -142,6 +170,7 @@ const index = require('./routes/index');
 app.use('/', index);
 app.use('/users', users);
 app.use("/", authRouter);
+app.use("/sitters", sitters);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

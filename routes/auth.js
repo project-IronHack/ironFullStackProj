@@ -3,6 +3,8 @@ const router = express.Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const salt = bcrypt.genSaltSync(10);
+var multer  = require('multer');
+var upload = multer({ dest: './public/uploads/' });
 
 //ensure login
 const ensureLogin = require("connect-ensure-login");
@@ -20,18 +22,23 @@ router.get("/auth/facebook/callback", passport.authenticate("facebook", {
 //facebook login
 
 //google login
-
 router.get("/auth/google", passport.authenticate("google", {
     scope: ["https://www.googleapis.com/auth/plus.login",
     "https://www.googleapis.com/auth/plus.profile.emails.read"]
 }));
-
 router.get("/auth/google/callback", passport.authenticate("google", {
     failureRedirect: "/",
     successRedirect: "/profile"
 }));
-
 //google login
+
+//instagram login
+router.get("/auth/instagram", passport.authenticate("instagram"));
+router.get("/auth/instagram/callback", passport.authenticate("instagram", {
+    successRedirect: "/profile",
+    failureRedirect: '/'
+  }));
+//instagram login
 
 //profile page
 router.get("/profile",
@@ -68,6 +75,7 @@ router.get("/signup", (req,res, next)=>{
 })
 
 .post("/signup", (req,res,next)=>{
+    console.log(req.body)
     const username = req.body.username,
           password = req.body.password;
     if(username === "" || password === ""){
@@ -85,7 +93,8 @@ router.get("/signup", (req,res, next)=>{
 
        const newUser = new User({
           username,
-          password:hashPass
+          password: hashPass,
+          imgUrl: `/uploads/${req.img}`
        });
 
        newUser.save(err=>{
