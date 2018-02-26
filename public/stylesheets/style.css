@@ -1,8 +1,130 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body{
+    font-family: 'Roboto';
+    color:#020f38;
+    background: url("../images/bg-blue.jpg");
+     height:100vh; 
+    }
+.container {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1000px;
+        height: 100%;
+        background-color:#ffffff;
+      }
+/* Header settings */
+header {
+    padding-bottom: 100px;
 }
 
-a {
-  color: #00B7FF;
+@media (max-width:767px){
+  header {
+  background-attachment:inherit;
+ }
+
+header .row
+{
+    margin-top:40vh; /* Handle the row */
 }
+
+@media (max-width:767px){
+    header .row
+{
+    margin-top:30vh; /* Handle the row on mobile */
+}
+}
+
+header h1
+{
+    font-family: 'Arbutus', cursive;
+    text-align:center;
+    font-size:61px;
+    color:#F8CA4D;
+    text-shadow:0px 0px 4px #222;
+}
+
+@media (max-width:767px){
+    header h1
+{
+    font-size:41px;
+}
+}
+
+header p
+{
+    text-align:center;
+    font-size:21px;
+}
+
+header .btn-link
+{
+    border:1px solid #2F3440;
+    margin-top:20px;
+    font-size:21px;
+    letter-spacing:1px;
+    color:#2F3440;
+    text-shadow:0px 0px 1px #222;
+    box-shadow:0px 0px 1px #000;
+}
+
+
+
+
+/* Custom navbar settings */
+.navbar-default {
+  background-color:#3F5666;
+  border-color:#2F3440;
+  border-bottom:1px solidÂ #00c9c0;
+  border-radius:0px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color:#fff;
+  letter-spacing:1px;
+  font-weight:500;
+}
+
+.navbar-default .navbar-brand {
+  color:#ffffff;
+  letter-spacing:1px;
+}
+
+.navbar-default .navbar-brand:hover {
+  color:#eee;
+  transition:all 0.7s;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color:#eee;
+  background-color:#2F3440;
+  transition:all 0.7s;
+  font-size:21px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color:#eee;
+  background-color:#2F3440;
+  transition:all 0.7s;
+  font-size:15px;
+}
+}
+
+.main-header{
+    text-align: center;
+    color:#020f38;
+
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    line-height: 1;
+    width: 100%; // Add this
+    }
+
+
+
+
+
