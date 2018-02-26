@@ -1,11 +1,13 @@
 <h2>Signup</h2>
 
 <form action="/signup" method="POST" id="form-container">
-    <label for="username">Username</label>
+    <label for="username">Username: </label>
     <input id="username" type="text" name="username" placeholder="JonSnow" required="true">
     <br><br>
-    <label for="password">Password</label>
+    <label for="password">Password: </label>
     <input id="password" type="password" name="password" placeholder="Your password" required="true">
+    <label for="img">Upload profile pic: </label>
+    <input type="file" name="img">
 
     <% if (typeof message !== "undefined") { %>
     <div class="error-message"><%= message %></div>
@@ -20,4 +22,7 @@
     </p>
 </form>
 
+<a href="/auth/facebook">Signup With Facebook</a>
+<a href="/auth/google">Signup With Google</a>
+<a href="/auth/instagram">Signup With Instagram</a>
 
