@@ -6,13 +6,13 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
-
+require(dotenv);
 var users = require('./routes/users');
 var sitters = require("./routes/sitters");
 
 const app = express();
 
-mongoose.connect('mongodb://oribermudez:a1b2c3d4@ds247648.mlab.com:47648/pawcare');
+mongoose.connect(process.env.DATABASE_URL);
 
 const authRouter = require("./routes/auth");
 
