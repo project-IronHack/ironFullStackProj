@@ -9,6 +9,7 @@ const mongoose     = require('mongoose');
 require("dotenv");
 var users = require('./routes/users');
 var sitters = require("./routes/sitters");
+var reviews = require("./routes/reviews");
 
 const app = express();
 
@@ -173,6 +174,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use("/", authRouter);
 app.use("/sitters", sitters);
+app.use("/reviews", reviews);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

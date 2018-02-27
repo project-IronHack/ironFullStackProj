@@ -9,16 +9,16 @@ const Review = require("../models/Review");
 //     });
 // });
 
-router.get("/new", (req,res)=>{
-    if(!req.session.currentUser) return res.redirect("/users/login");
+
+router.get("/reviews/new", (req,res)=>{
+    if(!req.session.currentUser) return res.redirect("/login");
     res.render("reviewForm", {
         user:req.session.currentUser,
         errorMessage:null
     });
 });
 
-router.post("/new", (req,res)=>{
-    
+router.post("/reviews/new", (req,res)=>{   
     const review = new Review({
         body: req.body.reviewText,
         user_id: req.session.currentUser._id,

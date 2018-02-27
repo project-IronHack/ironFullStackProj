@@ -1,7 +1,7 @@
 <div id="container">
     <h2>Hi @<%= user.username %>!</h2>
   
-    <form action="/new" method="POST" id="new-review">
+    <form action="reviews/new" method="POST" id="new-review">
       <label for="reviewText">Were you happy with the service provided? </label>
       <input type="text" name="reviewText" maxlength="200"
         placeholder="Write about your experience" >
