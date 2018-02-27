@@ -74,10 +74,12 @@ router.get("/signup", (req,res, next)=>{
     res.render("auth/signup");
 })
 
-.post("/signup", (req,res,next)=>{
+.post("/signup", upload.single('img'),(req,res,next)=>{
     console.log(req.body)
+    console.log(req.file)
     const username = req.body.username,
           password = req.body.password;
+          img = req.file.path;
     if(username === "" || password === ""){
         res.render("auth/signup", {message: "Indicate username and password"});
         return;
@@ -94,7 +96,7 @@ router.get("/signup", (req,res, next)=>{
        const newUser = new User({
           username,
           password: hashPass,
-          imgUrl: `/uploads/${req.img}`
+          imgUrl: img,
        });
 
        newUser.save(err=>{

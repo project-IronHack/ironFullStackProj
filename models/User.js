@@ -11,7 +11,7 @@ const userSchema = new Schema(
         facebookID: String,
         googleID: String,
         instagramID: String,
-
+        accountNum: String,
     },
     {
         timestamps:{

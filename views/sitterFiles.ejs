@@ -1,0 +1,25 @@
+<h2>Become a sitter!</h2>
+<p>In order to ensure the peace of mind of your future clients, <br>
+    we perform background checks to all the sitters, please upload <br>
+    the require documents below and fill the require fields about <br>
+    your account so you can receive payments.</p>
+
+<form action="/signup" method="POST" id="form-container" enctype="multipart/form-data">
+    <label for="officialID">Upload official ID (passport or SSC): </label>
+    <input id="officialID" type="file" name="backgroundCheck" required="true">
+    <br><br>
+    <label for="criminalRecord">Upload criminal record letter: </label>
+    <input id="criminalRecord" type="file" name="backgroundCheck" required="true">
+    <br><br>
+    <label for="residenceProof">Upload proof of residence: </label>
+    <input id="residenceProof" type="file" name="backgroundCheck" required="true">
+    <br><br>
+    <label for="references">Upload 2 reference letters: </label>
+    <input id="reference1" type="file" name="backgroundCheck" required="true">
+    <input id="reference2" type="file" name="backgroundCheck" required="true">
+    <br><br>
+    <label for="accountNum">Write your account number: </label>
+    <input id="accountNum" type="text" name="accountNum" required="true">
+    <br><br>
+    <button>Submit files</button>
+</form>

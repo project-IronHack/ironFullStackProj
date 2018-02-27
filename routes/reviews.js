@@ -2,16 +2,16 @@ const express = require("express");
 const router = express.Router();
 const Review = require("../models/Review");
 
-router.get("/", (req,res)=>{
-    Review.find({}, (err,docs)=>{
-        if(err) return res.send(err);
-        res.render("home", {review:docs});
-    });
-});
+// router.get("/", (req,res)=>{
+//     Review.find({}, (err,docs)=>{
+//         if(err) return res.send(err);
+//         res.render("home", {review:docs});
+//     });
+// });
 
 router.get("/new", (req,res)=>{
     if(!req.session.currentUser) return res.redirect("/users/login");
-    res.render("review_form", {
+    res.render("reviewForm", {
         user:req.session.currentUser,
         errorMessage:null
     });
@@ -23,6 +23,7 @@ router.post("/new", (req,res)=>{
         body: req.body.reviewText,
         user_id: req.session.currentUser._id,
         user_name: req.session.currentUser.username,
+        rating: req.body.rating,
     });
    review.save((err, result)=>{
     if(err) return res.send(err);
