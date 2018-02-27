@@ -12,7 +12,7 @@ var sitters = require("./routes/sitters");
 
 const app = express();
 
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect('mongodb://oribermudez:a1b2c3d4@ds247648.mlab.com:47648/pawcare');
 
 const authRouter = require("./routes/auth");
 
