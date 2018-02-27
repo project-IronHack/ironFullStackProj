@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
-require(dotenv);
+require("dotenv");
 var users = require('./routes/users');
 var sitters = require("./routes/sitters");
 
