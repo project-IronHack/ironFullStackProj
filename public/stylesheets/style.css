@@ -355,6 +355,14 @@ form#login-form {
   color: #175690;
 }
 
+
+/*************** SEARCH PAGE STYLES *****************************/
+#map{
+  width: 100%;
+  height: 500px;
+}
+
+
 /*************** PROFILE PAGE STYLES *****************************/
 #main-profile { 
 
