@@ -1,6 +1,3 @@
-<!-- <% if (typeof(errorMessage) != "undefined") { %>
-  <div class="error-message"><%= errorMessage %></div>
-<% } %> -->
 <div class="container-form">
 <form action="/signup" method="POST" id="msform" enctype="multipart/form-data">
           <ul id="progressbar">
@@ -17,7 +14,32 @@
           <input type="password" name="password" id="password" placeholder="Password"/>
           <input type="password" name="cpassword" id="passwordC" placeholder="Confirm Password" />
           <input type="button" name="next" class="next action-button" value="Next" />
-        </fieldset>
+       
+          <div class="social">
+              
+                  <h4>Connect with</h4>
+          <ul>
+          <li>
+            <a href="/auth/facebook" class="facebook">
+              <span class="fa fa-facebook"></span>
+            </a>
+            </li>
+            <li>
+              <a href="/auth/instagram" class="instagram">
+                <span class="fa fa-instagram"></span>
+              </a>
+            </li>
+            <li>
+              <a href="/auth/google" class="google-plus">
+                <span class="fa fa-google-plus"></span>
+              </a>
+            </li>
+            </ul>
+        </div>
+         </fieldset>
+ 
+      
+
         <fieldset>
           <h2 class="fs-title">Profile Pic</h2>
           <h3 class="fs-subtitle">Let's put a face on this name</h3>
