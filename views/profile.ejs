@@ -1,4 +1,4 @@
-<div class="main">
+<div id="main-profile">
         <div id="topbar">
             <% if (user) { %>
           <li class="icons home">
@@ -28,7 +28,6 @@
           
           <div id="user-container">
             <div id="content" class="clearfix">
-              <div id="userphoto"><img src="images/avatar.png" alt="default avatar"></div>
               <h1>Username Dashboard</h1>
         
               <nav id="profiletabs">
@@ -43,23 +42,18 @@
               </nav>
               
               <section id="booking" class="hidden">
-                <p>Bookings:</p>
+                <h4>Bookings:</h4>
                 
                 <p class="transations">24.02 - Booked a walking with  <strong>someusername</strong></p>
                 
                 <p class="transations">01.01 - Booked a sitting with  <strong>someusername</strong></p>
                 
-                <p class="transations">08.02 - Booked a sitting with  <strong>someusername</strong></p>
-        
-                <p class="transations">03.01 - Booked a walking with  <strong>someusername</strong></p>
-                
-                <p class="transations">18.02 - Booked a walking with  <strong>someusername</strong></p>
                 
                
               </section>
         
               <section id="activity">
-                  <p>Most recent actions:</p>
+                  <h4>Most recent actions:</h4>
                 
                   <p class="transations">@10:15PM - Submitted a news article</p>
                   
@@ -74,35 +68,33 @@
               </section>
               
               <section id="awards" class="hidden">
-                <p>Friends list:</p>
+                <h4>Points Collected</h4>
                 
                 <ul id="award" class="clearfix">
-                  <li><a href="#"><img src="images/avatar.png" width="22" height="22"> Username</a></li>
-                  <li><a href="#"><img src="images/avatar.png" width="22" height="22"> SomeGuy123</a></li>
-                  <li><a href="#"><img src="images/avatar.png" width="22" height="22"> PurpleGiraffe</a></li>
+                  <li><a href="#"><img src="images/avatar.png" width="22" height="22"> 300 likes</a></li>
+                  <li><a href="#"><img src="images/avatar.png" width="22" height="22"> 123 likes</a></li>
+                  <li><a href="#"><img src="images/avatar.png" width="22" height="22"> 89 likes</a></li>
                 </ul>
               </section>
               
               <section id="settings" class="hidden">
-                <p>Edit your user settings:</p>
+                <h4>Edit your settings:</h4>
                 
                 <p class="setting"><span>E-mail Address <img src="images/edit.png" alt="*Edit*"></span> lolno@gmail.com</p>
                 
-                <p class="setting"><span>Language <img src="images/edit.png" alt="*Edit*"></span> English(US)</p>
+                <p class="setting"><span>Change Password <img src="images/edit.png" alt="*Edit*"></span> Public</p>
                 
-                <p class="setting"><span>Profile Status <img src="images/edit.png" alt="*Edit*"></span> Public</p>
+                <p class="setting"><span>News Letter Frequency <img src="images/edit.png" alt="*Edit*"></span> Weekly</p>
                 
-                <p class="setting"><span>Update Frequency <img src="images/edit.png" alt="*Edit*"></span> Weekly</p>
-                
-                <p class="setting"><span>Connected Accounts <img src="images/edit.png" alt="*Edit*"></span> None</p>
+                <p class="setting"><span>Cancel Account<img src="images/edit.png" alt="*Edit*"></span> None</p>
               </section>
         
               <section id="review" class="hidden">
-                  <p>Reviwes:</p>
+                  <h4>Reviews:</h4>
                 <form action="/new" method="POST" id="new-review">
                   <div class="rating">
                       <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                      </div>
+                  </div>
                 <label for="reviewText">Were you happy with the service provided? </label>
                 <input type="text" name="reviewText" maxlength="200"
                   placeholder="Write about your experience" >
@@ -112,6 +104,13 @@
                 <button class="button blue fright">Save review</button>
               </form>
         </section>
+
+        <section id="sitters" class="hidden">
+            <h4>some text</h4>
+            
+        </section>
             </div><!-- end #content -->
           </div><!-- end #user-container -->
+          <div id="userphoto">
+            <img src="images/slide3.jpeg" alt="avatar user"></div>
         </div><!-- end #main -->

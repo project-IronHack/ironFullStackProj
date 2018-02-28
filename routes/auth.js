@@ -46,7 +46,12 @@ router.get("/profile",
     (req, res)=>{
 
     console.log(req.user);
-    res.render("profile", {user:req.user});
+    res.render("profile", {
+        user:req.user,
+        //reviews:ll,
+        //history:oio,
+        //bookings:book
+    });
 
 });
 

@@ -355,43 +355,34 @@ form#login-form {
   color: #175690;
 }
 
-
 /*************** PROFILE PAGE STYLES *****************************/
-#main { 
+#main-profile { 
+
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #313131;
   font-size: 62.5%; 
   line-height: 1; 
-  background-image:url("http://www.comportese.com/wp-content/uploads/2014/12/15-Free-Blurry-Backgrounds-5-of-15.jpg");
+  background-image:url("../images/bg-profile.jpg");
+  background-size: cover;
+  min-height: 100vh;
 }
-
-::selection { background: #a4dcec; }
-br { display: block; line-height: 2.2em; } 
-
-ul { list-style: none; }
-
-input, textarea { 
-  box-sizing: border-box;
-  outline: none; 
-}
-
 img { border: 0; max-width: 100%; }
 
 #topbar {
   background:#fff;
   padding: 10px;
   text-align: left;
-  height: 40px;
+  height: 50px;
   overflow: hidden;
-  transition: height 0.5s linear;
 }
+
 #topbar a {
   color: #000;
   font-size:1.3em;
   line-height: 1.25em;
   text-decoration: none;
   opacity: 0.5;
-  font-weight: bold;
+  font-weight: 500;
 }
 #topbar a:hover {
   opacity: 1;
@@ -400,9 +391,8 @@ img { border: 0; max-width: 100%; }
     height: 30px;  
     width: 30px;  
     position: absolute;
-    top: 12px;
+    top: 2px;
     list-style: none;
- 
 }
 .home{
   left: 25px; 
@@ -417,7 +407,7 @@ img { border: 0; max-width: 100%; }
 }
 
 /** typography **/
-h1 {
+#main-profile h1 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2.5em;
   line-height: 1.5em;
@@ -425,95 +415,82 @@ h1 {
   margin-bottom: 20px;
   padding: .1em 0;
   color: #444;
-	position: relative;
-	overflow: hidden;
-	white-space: nowrap;
   text-align: center;
-   vertical-align: middle;
-  background: #f0f0f0;
-  left: -.5em;
-  margin: 0 0 0 -50%;
-}
-h1:before,
-h1:after {
-  content: "";
-  position: relative;
-  display: inline-block;
-  width: 50%;
-  height: 1px;
-  vertical-align: middle;
-  background: #f0f0f0;
-  left: -.5em;
-  margin: 0 0 0 -50%;
+ 
 }
 
-p {
+#main-profile p {
   display: block;
   font-size: 1.4em;
   line-height: 1.55em;
-  margin-bottom: 22px;
+  margin: 22px 0;
   color: #555;
 }
-
-a { color: #5a9352; text-decoration: none; }
-a:hover { text-decoration: underline; }
 
 .center { display: block; text-align: center; }
 
 /** page structure **/
 #user-container {
-  display: block;
-  width: 800px;
+  
+  display: inline-block;
+  width: 700px;
   margin: 0 auto;
- padding-bottom: 85px;
+ left:300px;
  padding-top:15px; 
-
+ padding-left: 30px;
 }
 
 #content {
   display: block;
   width: 100%;
   background: #fff;
-  padding: 25px 20px;
+  padding: 35px 20px;
   padding-bottom: 35px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  height: 600px;
 }
 
 #userphoto {
-  display: block;
   float: right;
-  margin-left: 10px;
+  width: 350px;
+  height: 500px;
+  margin-right: 350px;
+  margin-top: 20px;
   margin-bottom: 8px;
 }
-#userphoto img {
-  display: block;
-  padding: 2px;
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-}
 
+#userphoto img {
+height: 100%;
+width: 100%; 
+}
 
 /** profile nav links **/
 #profiletabs {
   display: block;
   margin-bottom: 4px;
-  height: 50px;
+
 }
 
-#profiletabs ul { list-style: none; display: block; width: 70%; height: 50px; }
-#profiletabls ul li { float: left; }
+#profiletabs ul { 
+  list-style: none; 
+  display: block; 
+  padding-top: 10px;
+  padding-left: 100px;
+  
+ }
+
 #profiletabs ul li a { 
   display: block;
   float: left;
-  padding: 8px 11px;
+  padding: 8px 5px;
   font-size: 1.2em;
   font-weight: bold;
-  background: #eae8db;
+  background: #cee;
   color: #666;
-  margin-right: 7px;
+  margin-right: 8px;
   border: 1px solid #fff;
   border-radius: 5px;
-  border-bottom-left-radius: 0;
+
 }
 #profiletabs ul li a:hover {
   text-decoration: none;
@@ -533,14 +510,15 @@ a:hover { text-decoration: underline; }
 }
 
 .activity {
-  border-bottom: 1px solid #d6d1af;
-  padding-bottom: 4px;
+  border-top:450px;
+  padding: 35px
+
 }
 
 .setting {
   display: block;
   font-weight: normal;
-  padding: 7px 3px;
+  padding: 15px 3px;
   border-top: 1px solid #d6d1af;
   margin-bottom: 5px;
 }
@@ -604,7 +582,6 @@ a:hover { text-decoration: underline; }
   text-decoration: none;
   cursor: pointer;
 }
-
 
 
 /** clearfix **/
