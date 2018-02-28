@@ -1,19 +1,18 @@
 
 /****** Global Styles ******/
-/***** Color Palete 
-#3253bb
-#020f38
-*/
 body{
-	   font-family: 'Abel', sans-serif;
-     color:#020f38;
-     font-size: 16px;  
-     height: 100%; 
+	  font-family: 'Abel', sans-serif;
+    color:#020f38;
+    font-size: 16px;  
+    height: 100%; 
     margin: 0; 
-    padding: 0;
+		padding: 0;
+		vertical-align: baseline;
+		outline: none;
+		box-sizing: border-box;
 }
 
-/****** Main Container ******/
+/************* Main Container Index ************/
 .container {
      position: relative;
      margin-left: auto;
@@ -100,7 +99,6 @@ body{
 
 /************* Signup Form ***************/
 .container-form {
-
 	 background-image: url("../images/patas.png");
    background-size: cover;
    margin: 0; 
@@ -220,7 +218,7 @@ body{
 	color: white;
 }
 
-/**************** Signup Form *****************/
+/******************* Login Form ***********************/
 form#login-form {
   background: #fff;
   border-radius: 6px;
@@ -363,6 +361,262 @@ form#login-form {
 }
 
 
+/*************** PROFILE PAGE STYLES *****************************/
+#main { 
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #313131;
+  font-size: 62.5%; 
+  line-height: 1; 
+  background-image:url("http://www.comportese.com/wp-content/uploads/2014/12/15-Free-Blurry-Backgrounds-5-of-15.jpg");
+}
+
+::selection { background: #a4dcec; }
+br { display: block; line-height: 2.2em; } 
+
+ul { list-style: none; }
+
+input, textarea { 
+  box-sizing: border-box;
+  outline: none; 
+}
+
+img { border: 0; max-width: 100%; }
+
+#topbar {
+  background:#fff;
+  padding: 10px;
+  text-align: left;
+  height: 40px;
+  overflow: hidden;
+  transition: height 0.5s linear;
+}
+#topbar a {
+  color: #000;
+  font-size:1.3em;
+  line-height: 1.25em;
+  text-decoration: none;
+  opacity: 0.5;
+  font-weight: bold;
+}
+#topbar a:hover {
+  opacity: 1;
+}
+.icons {
+    height: 30px;  
+    width: 30px;  
+    position: absolute;
+    top: 12px;
+    list-style: none;
+ 
+}
+.home{
+  left: 25px; 
+}
+.logout {
+  left: 90px; 
+}
+.chat{
+  right: 20px;
+  height: 45px;  
+  width: 45px
+}
+
+/** typography **/
+h1 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2.5em;
+  line-height: 1.5em;
+  letter-spacing: -0.05em;
+  margin-bottom: 20px;
+  padding: .1em 0;
+  color: #444;
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+  text-align: center;
+   vertical-align: middle;
+  background: #f0f0f0;
+  left: -.5em;
+  margin: 0 0 0 -50%;
+}
+h1:before,
+h1:after {
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  height: 1px;
+  vertical-align: middle;
+  background: #f0f0f0;
+  left: -.5em;
+  margin: 0 0 0 -50%;
+}
+
+p {
+  display: block;
+  font-size: 1.4em;
+  line-height: 1.55em;
+  margin-bottom: 22px;
+  color: #555;
+}
+
+a { color: #5a9352; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.center { display: block; text-align: center; }
+
+/** page structure **/
+#user-container {
+  display: block;
+  width: 800px;
+  margin: 0 auto;
+ padding-bottom: 85px;
+ padding-top:15px; 
+
+}
+
+#content {
+  display: block;
+  width: 100%;
+  background: #fff;
+  padding: 25px 20px;
+  padding-bottom: 35px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+#userphoto {
+  display: block;
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 8px;
+}
+#userphoto img {
+  display: block;
+  padding: 2px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+
+/** profile nav links **/
+#profiletabs {
+  display: block;
+  margin-bottom: 4px;
+  height: 50px;
+}
+
+#profiletabs ul { list-style: none; display: block; width: 70%; height: 50px; }
+#profiletabls ul li { float: left; }
+#profiletabs ul li a { 
+  display: block;
+  float: left;
+  padding: 8px 11px;
+  font-size: 1.2em;
+  font-weight: bold;
+  background: #eae8db;
+  color: #666;
+  margin-right: 7px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+}
+#profiletabs ul li a:hover {
+  text-decoration: none;
+  background: #dad7c2;
+  color: #565656;
+}
+
+#profiletabs ul li a.sel {
+  background: #fff;
+  border-color: #d1cdb5;
+}
+
+
+/** profile content sections **/
+.hidden {
+  display: none;
+}
+
+.activity {
+  border-bottom: 1px solid #d6d1af;
+  padding-bottom: 4px;
+}
+
+.setting {
+  display: block;
+  font-weight: normal;
+  padding: 7px 3px;
+  border-top: 1px solid #d6d1af;
+  margin-bottom: 5px;
+}
+.setting span {
+  float: left; 
+  width: 250px;
+  font-weight: bold;
+}
+.setting span img { 
+  cursor: pointer;
+}
+
+
+#transations {
+  display: block;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+
+/** Review **/
+.rating > span:hover:before {
+  content: "\2605";
+  position: absolute;
+}
+
+/********* Modal Chat *********/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: yellow;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+/** clearfix **/
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; }
+
+* html .clearfix { height: 1%; }
 
 
 

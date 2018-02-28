@@ -1,6 +1,5 @@
 
-
-//jQuery Form
+//jQuery Form signup
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
@@ -80,10 +79,27 @@ $(".previous").click(function(){
 
 $(".submit").click(function(){
 	return false;
-})
+})//ENDS jQuery Form-signup
 
 //nav bar animation 
 /* For mobile support, delet the 'mobile' */
 $(document).ready(function(){
 	AOS.init({ disable: '' });
+});
+
+//User Dashboard effect
+$(function(){
+  $('#profiletabs ul li a').on('click', function(e){
+    e.preventDefault();
+    var newcontent = $(this).attr('href');
+    
+    $('#profiletabs ul li a').removeClass('sel');
+    $(this).addClass('sel');
+    
+    $('#content section').each(function(){
+      if(!$(this).hasClass('hidden')) { $(this).addClass('hidden'); }
+    });
+    
+    $(newcontent).removeClass('hidden');
+  });
 });

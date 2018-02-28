@@ -1,6 +1,117 @@
-User Profile Page
-<% if (user) { %>
-<div>
-    <a href="/reviews/new">review</a>
-</div>
-<% } %>
+<div class="main">
+        <div id="topbar">
+            <% if (user) { %>
+          <li class="icons home">
+              <a href="/">
+            <img src="images/house.png">Home</a>
+        </li>
+        <% } %>
+        <li class="icons logout">
+            <a href="/">
+          <img src="images/logout.png">Logout</a>
+        </li>
+        
+        <li class="icons chat">
+          <img src="images/chat.png" id="myBtn">
+        </li>
+          </div>
+        
+          <!-- The Modal -->
+         <div id="myModal" class="modal">
+             <!-- Modal content -->
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Some text in the Modal..</p>
+            </div>
+          </div>
+          
+          
+          <div id="user-container">
+            <div id="content" class="clearfix">
+              <div id="userphoto"><img src="images/avatar.png" alt="default avatar"></div>
+              <h1>Username Dashboard</h1>
+        
+              <nav id="profiletabs">
+                <ul class="clearfix">
+                  <li><a href="#booking">Bookings</a></li>
+                  <li><a href="#activity" class="sel">Activity</a></li>
+                  <li><a href="#awards">Awards</a></li>
+                  <li><a href="#settings">Settings</a></li>
+                  <li><a href="#review">Review</a></li>
+                  <li><a href="#review">Sitters</a></li>
+                </ul>
+              </nav>
+              
+              <section id="booking" class="hidden">
+                <p>Bookings:</p>
+                
+                <p class="transations">24.02 - Booked a walking with  <strong>someusername</strong></p>
+                
+                <p class="transations">01.01 - Booked a sitting with  <strong>someusername</strong></p>
+                
+                <p class="transations">08.02 - Booked a sitting with  <strong>someusername</strong></p>
+        
+                <p class="transations">03.01 - Booked a walking with  <strong>someusername</strong></p>
+                
+                <p class="transations">18.02 - Booked a walking with  <strong>someusername</strong></p>
+                
+               
+              </section>
+        
+              <section id="activity">
+                  <p>Most recent actions:</p>
+                
+                  <p class="transations">@10:15PM - Submitted a news article</p>
+                  
+                  <p class="transations">@9:50PM - Submitted a news article</p>
+                  
+                  <p class="transations">@8:15PM - Posted a comment</p>
+                  
+                  <p class="transations">@4:30PM - Added <strong>someusername</strong> as a friend</p>
+                  
+                  <p class="transations">@12:30PM - Submitted a news article</p>
+                
+              </section>
+              
+              <section id="awards" class="hidden">
+                <p>Friends list:</p>
+                
+                <ul id="award" class="clearfix">
+                  <li><a href="#"><img src="images/avatar.png" width="22" height="22"> Username</a></li>
+                  <li><a href="#"><img src="images/avatar.png" width="22" height="22"> SomeGuy123</a></li>
+                  <li><a href="#"><img src="images/avatar.png" width="22" height="22"> PurpleGiraffe</a></li>
+                </ul>
+              </section>
+              
+              <section id="settings" class="hidden">
+                <p>Edit your user settings:</p>
+                
+                <p class="setting"><span>E-mail Address <img src="images/edit.png" alt="*Edit*"></span> lolno@gmail.com</p>
+                
+                <p class="setting"><span>Language <img src="images/edit.png" alt="*Edit*"></span> English(US)</p>
+                
+                <p class="setting"><span>Profile Status <img src="images/edit.png" alt="*Edit*"></span> Public</p>
+                
+                <p class="setting"><span>Update Frequency <img src="images/edit.png" alt="*Edit*"></span> Weekly</p>
+                
+                <p class="setting"><span>Connected Accounts <img src="images/edit.png" alt="*Edit*"></span> None</p>
+              </section>
+        
+              <section id="review" class="hidden">
+                  <p>Reviwes:</p>
+                <form action="/new" method="POST" id="new-review">
+                  <div class="rating">
+                      <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                      </div>
+                <label for="reviewText">Were you happy with the service provided? </label>
+                <input type="text" name="reviewText" maxlength="200"
+                  placeholder="Write about your experience" >
+                <label for="rating">Rate service: </label>
+                <input type="text" name="rating">
+          
+                <button class="button blue fright">Save review</button>
+              </form>
+        </section>
+            </div><!-- end #content -->
+          </div><!-- end #user-container -->
+        </div><!-- end #main -->
