@@ -75,11 +75,17 @@ router.get("/signup", (req,res, next)=>{
 })
 
 .post("/signup", upload.single('img'),(req,res,next)=>{
-    console.log(req.body)
+    console.log( req.body)
     console.log(req.file)
     const username = req.body.username,
           password = req.body.password;
+          displayName = req.body.displayName;
+          phone = req.body.phone;
+          address = req.body.address;
           img = req.file.path;
+          email = req.body.email;
+          cpassword = req.body.cpassword;
+
     if(username === "" || password === ""){
         res.render("auth/signup", {message: "Indicate username and password"});
         return;
@@ -89,16 +95,23 @@ router.get("/signup", (req,res, next)=>{
        if (user !== null){
            res.render("auth/signup", {message:"The username already exists"});
            return;
-       }
+    }
+
+    if(password !== cpassword){
+        res.render("auth/signup", {message:"Passwords do not match"});
+    }
 
        const hashPass = bcrypt.hashSync(password, salt);
 
        const newUser = new User({
+          displayName: 
           username,
           password: hashPass,
+          email,
+          phone,
+          address,
           imgUrl: img,
        });
-
        newUser.save(err=>{
            if (err) return res.render("auth/signup", { message: "Something went wrong" });
             res.redirect("/profile");

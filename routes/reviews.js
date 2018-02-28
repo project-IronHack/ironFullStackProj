@@ -10,25 +10,27 @@ const ensureLogin = require("connect-ensure-login");
 const passport = require("passport");
 
 router.get("/", (req,res)=>{
-    Review.find({}, (err,docs)=>{
-        if(err) return res.send(err);
-        res.render("reviewsPage", {reviews:docs});
-    });
+    Review.find()
+        .populate("user_id")
+        .then(docs => {
+            console.log(docs)
+            res.render("reviewsPage", {reviews:docs})
+        })
+        .catch(err => console.log(err));
 });
 
 router.get("/new", ensureLogin.ensureLoggedIn(),(req, res)=>{
-    console.log(req.user);
     res.render("reviewForm", {user:req.user});
-    console.log(req.user)
 });
 
 router.post("/new", (req,res)=>{   
+    console.log(req.body)
     const review = new Review({
         body: req.body.reviewText,
-        user_id: req.session.currentUser._id,
-        user_name: req.session.currentUser.username,
         rating: req.body.rating,
+        user_id: req.user._id,
     });
+    console.log(review)
    review.save((err, result)=>{
     if(err) return res.send(err);
     res.redirect("/");

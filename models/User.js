@@ -7,6 +7,8 @@ const userSchema = new Schema(
         username:{ type:String, trim:true },
         password:String,
         email: String,
+        phone: String,
+        address: Object,
         imgUrl: { type: String, default: "http://cdn.onlinewebfonts.com/svg/img_518099.png" },
         facebookID: String,
         googleID: String,

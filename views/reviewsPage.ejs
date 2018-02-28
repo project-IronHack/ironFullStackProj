@@ -1,9 +1,11 @@
 <ul>
         <% reviews.forEach(function(review){ %>
              <li>
-                 <span><%=review.created_at%></span>
-                 <p><%=review.user_name%></p>
+                 <p><%= review.user_id.displayName %></p>
+                 <img src="<%= review.user_id.imgUrl%>" width="100px" alt="">
+                 <p><%=review.rating%></p>
                  <p><%=review.body%></p>
+                 <span>Post date: <%=review.created_at%></span>
              </li>
         <% }) %>
      

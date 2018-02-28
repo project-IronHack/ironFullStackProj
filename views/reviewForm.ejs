@@ -1,14 +1,14 @@
 <div id="container">
     <h2>Hi <%= user.displayName %>!</h2>
   
-    <form action="reviews/new" method="POST" id="new-review">
+    <form action="/reviews/new" method="POST" id="new-review">
       <label for="reviewText">Were you happy with the service provided? </label>
-      <input type="text" name="reviewText" maxlength="200"
-        placeholder="Write about your experience" >
+      <textarea type="text" name="reviewText" maxlength="200"
+        placeholder="Write about your experience" ></textarea>
       <label for="rating">Rate service: </label>
       <input type="text" name="rating">
 
-      <button class="button blue fright">Save review</button>
+      <button >Save review</button>
     </form>
   
     <% if (typeof(errorMessage) != "undefined") { %>
