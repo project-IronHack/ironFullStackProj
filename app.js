@@ -90,20 +90,21 @@ passport.use(new InstagramStrategy({
   clientSecret: "075fb81547ca4496a2eeb426638b6e5d",
   callbackURL: "/auth/instagram/callback"
 },
-function(accessToken, refreshToken, profile, done) {
+function(accessToken, refreshToken, profile, next) {
+  console.log("fuera de la busqueda")
+  console.log(profile)
   User.findOne({ instagramID: profile.id }, function (err, user) {
-    return done(err, user);
     console.log(profile);
-      if(err) return done(err);
-      if(user) return done(null,user);
+      if(err) return next(err);
+      if(user) return next(null,user);
       const newUser = new User({
           instagramID:profile.id,
           displayName:profile.displayName,
-          email:profile.emails.length > 0 ? profile.emails[0].value : null
+          //email:profile.emails.length > 0 ? profile.emails[0].value : null
       })
       newUser.save((err)=>{
-        if(err) return done(err);
-        done(null, newUser);
+        if(err) return next(err);
+        next(null, newUser);
       });
   });
 }
