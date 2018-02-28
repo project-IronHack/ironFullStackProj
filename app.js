@@ -6,9 +6,10 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
-
+require("dotenv");
 var users = require('./routes/users');
 var sitters = require("./routes/sitters");
+var reviews = require("./routes/reviews");
 
 const app = express();
 
@@ -146,7 +147,7 @@ passport.use(new LocalStrategy({passReqToCallback:true},(req, username, password
   User.findOne({username}, (err, user)=>{
     if(err) return next(err);
     if(!user) return next(null, false, {message: "incorrect username"});
-    if(!bcrypt.compareSync(password, user.password)) return next(null, false, {message: "Incorrecto password"});
+    if(!bcrypt.compareSync(password, user.password)) return next(null, false, {message: "Incorrect password"});
     return next(null, user);
   });
 }));
@@ -173,6 +174,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use("/", authRouter);
 app.use("/sitters", sitters);
+app.use("/reviews", reviews);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
