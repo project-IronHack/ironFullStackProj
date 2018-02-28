@@ -2,10 +2,12 @@
 /* CSS Document */
 
 .strength_meter{
-	height:23px;
-width: 154px;
-	background:silver;
-	
+	height:20px;
+  width: 420px;
+	background:silver;	
+	border-radius: 25px;
+	text-align: center;
+	margin: 15px 0; 
 }
 .strength_meter div{
 	height:23px;
@@ -15,20 +17,27 @@ width: 154px;
 	color:black;
 	font-weight:bold;
 	line-height:23px;
+
+
 }
 .veryweak{
-	background-color: #FFA0A0;
+background-color: #FFA0A0;
+border-radius: 25px;
 border-color: #F04040!important
+
 }
 .weak{
 background-color: #FFB78C;
+border-radius: 25px;
 border-color: #FF853C!important;
 }
 .medium{
 background-color: #FFEC8B;
+border-radius: 25px;
 border-color: #FC0!important;
 }
 .strong{
 background-color: #C3FF88;
+border-radius: 25px;
 border-color: #8DFF1C!important;
 }
