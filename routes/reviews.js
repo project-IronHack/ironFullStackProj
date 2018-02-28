@@ -14,7 +14,7 @@ router.get("/", (req,res)=>{
         .populate("user_id")
         .then(docs => {
             console.log(docs)
-            res.render("reviewsPage", {reviews:docs})
+            res.render("booking", {reviews:docs})
         })
         .catch(err => console.log(err));
 });

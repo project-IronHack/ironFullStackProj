@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
+const Sitter = require("../models/Sitter");
 const bcrypt = require("bcrypt");
 const salt = bcrypt.genSaltSync(10);
 var multer  = require('multer');
@@ -104,8 +105,7 @@ router.get("/signup", (req,res, next)=>{
        const hashPass = bcrypt.hashSync(password, salt);
 
        const newUser = new User({
-          displayName: 
-          username,
+          username: username,
           password: hashPass,
           email,
           phone,
@@ -118,6 +118,62 @@ router.get("/signup", (req,res, next)=>{
        });
 
     });
+});
+
+
+
+router.post("/sitterSignup", upload.fields([{
+    name: 'img', maxCount: 1
+  }, {
+    name: 'officialID', maxCount: 1
+  }]),(req,res,next)=>{
+  //upload.single('img'), upload.single('officialID'), upload.single('criminalRecord'), upload.single('residenceProof'), upload.single('reference1'),  upload.single('reference2'), (req,res,next)=>{
+    //router.post("/sitterSignup", (req,res,next)=>{
+    //console.log(req.body)
+    console.log("bliss", req.files)
+    const displayName = req.body.displayName;
+          username = req.body.username,
+          email = req.body.email;
+          password = req.body.password;
+          cpassword = req.body.cpassword;
+          //img = req.file.path;
+
+    if(username === "" || password === ""){
+        res.render("auth/sitterSignup", {message: "Indicate username and password"});
+        return;
+    }
+
+    User.findOne({username}, "username", (err, user)=>{
+       if (user !== null){
+           res.render("auth/sitterSignup", {message:"The username already exists"});
+           return;
+    }
+
+    if(password !== cpassword){
+        res.render("auth/sitterSignup", {message:"Passwords do not match"});
+    }
+
+       const hashPass = bcrypt.hashSync(password, salt);
+
+       const newSitter = new Sitter({
+          displayName: 
+          username,
+          password: hashPass,
+          email,
+          phone,
+          address,
+          imgUrl: img,
+       });
+       newSitter.save(err=>{
+           if (err) return res.render("auth/sitterSignup", { message: "Something went wrong" });
+            res.redirect("/profile");
+       });
+
+    });
+});
+
+router.get("/sitterSignup", (req,res, next)=>{
+    res.render("auth/sitterSignup");
 });
 
 module.exports = router;

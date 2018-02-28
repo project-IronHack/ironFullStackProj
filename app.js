@@ -144,6 +144,7 @@ passport.deserializeUser((id, cb)=>{
 app.use(flash());
 
 passport.use(new LocalStrategy({passReqToCallback:true},(req, username, password, next)=>{
+  console.log(username, password)
   User.findOne({username}, (err, user)=>{
     if(err) return next(err);
     if(!user) return next(null, false, {message: "incorrect username"});

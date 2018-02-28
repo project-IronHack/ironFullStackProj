@@ -1,0 +1,21 @@
+
+
+
+<div id="reviews">
+    <ul>
+        <% reviews.forEach(function(review){ %>
+        <li>
+        <p><%= review.user_id.displayName %></p>
+        <img src="<%= review.user_id.imgUrl%>" width="100px" alt="">
+        <p><%=review.rating%></p>
+        <p><%=review.body%></p>
+        <span>Post date: <%=review.created_at%></span>
+        </li>
+        <% }) %>
+    </ul>
+</div>
+    <div class="info"><h3>Find a sitter near you:</h3></div>
+    <label><input placeholder="Zip code or address" style="width:500px" id="gmapInput" type="text"/></label>
+    <div id="map"></div>
+
+
