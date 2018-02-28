@@ -147,7 +147,7 @@ passport.use(new LocalStrategy({passReqToCallback:true},(req, username, password
   User.findOne({username}, (err, user)=>{
     if(err) return next(err);
     if(!user) return next(null, false, {message: "incorrect username"});
-    if(!bcrypt.compareSync(password, user.password)) return next(null, false, {message: "Incorrecto password"});
+    if(!bcrypt.compareSync(password, user.password)) return next(null, false, {message: "Incorrect password"});
     return next(null, user);
   });
 }));

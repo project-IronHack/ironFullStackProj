@@ -1,24 +1,28 @@
 const express = require("express");
 const router = express.Router();
 const Review = require("../models/Review");
+const User = require("../models/User");
 
-// router.get("/", (req,res)=>{
-//     Review.find({}, (err,docs)=>{
-//         if(err) return res.send(err);
-//         res.render("home", {review:docs});
-//     });
-// });
+//ensure login
+const ensureLogin = require("connect-ensure-login");
 
+//passport
+const passport = require("passport");
 
-router.get("/reviews/new", (req,res)=>{
-    if(!req.session.currentUser) return res.redirect("/login");
-    res.render("reviewForm", {
-        user:req.session.currentUser,
-        errorMessage:null
+router.get("/", (req,res)=>{
+    Review.find({}, (err,docs)=>{
+        if(err) return res.send(err);
+        res.render("reviewsPage", {reviews:docs});
     });
 });
 
-router.post("/reviews/new", (req,res)=>{   
+router.get("/new", ensureLogin.ensureLoggedIn(),(req, res)=>{
+    console.log(req.user);
+    res.render("reviewForm", {user:req.user});
+    console.log(req.user)
+});
+
+router.post("/new", (req,res)=>{   
     const review = new Review({
         body: req.body.reviewText,
         user_id: req.session.currentUser._id,
@@ -30,5 +34,7 @@ router.post("/reviews/new", (req,res)=>{
     res.redirect("/");
    }); 
 });
+
+
 
 module.exports = router;

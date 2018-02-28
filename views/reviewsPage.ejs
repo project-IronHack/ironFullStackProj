@@ -1,0 +1,10 @@
+<ul>
+        <% reviews.forEach(function(review){ %>
+             <li>
+                 <span><%=review.created_at%></span>
+                 <p><%=review.user_name%></p>
+                 <p><%=review.body%></p>
+             </li>
+        <% }) %>
+     
+     </ul>

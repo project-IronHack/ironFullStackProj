@@ -101,7 +101,7 @@ router.get("/signup", (req,res, next)=>{
 
        newUser.save(err=>{
            if (err) return res.render("auth/signup", { message: "Something went wrong" });
-            res.redirect("/");
+            res.redirect("/profile");
        });
 
     });
