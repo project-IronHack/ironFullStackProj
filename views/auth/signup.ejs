@@ -1,28 +1,43 @@
-<h2>Signup</h2>
+<div class="container-form">
+<form action="/signup" method="POST" id="msform">
+          <ul id="progressbar">
+            <li class="active">Account Setup</li>
+            <li>Upload Picture</li>
+            <li>Personal Details</li>
+        </ul>
+        <!-- fieldsets -->
+        <fieldset>
+          <h2 class="fs-title">Create your account</h2>
+          <h3 class="fs-subtitle">This is step 1</h3>
+          <input type="text" name="username" placeholder="Username" required="true" />
+          <input type="text" name="email" placeholder="Email" required="true"  />
+          <input type="password" name="pass" id="password" placeholder="Password" required="true" />
+          <input type="password" name="cpass" id="passwordC" placeholder="Confirm Password" />
+          <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+ 
+      
 
-<form action="/signup" method="POST" id="form-container">
-    <label for="username">Username: </label>
-    <input id="username" type="text" name="username" placeholder="JonSnow" required="true">
-    <br><br>
-    <label for="password">Password: </label>
-    <input id="password" type="password" name="password" placeholder="Your password" required="true">
-    <label for="img">Upload profile pic: </label>
-    <input type="file" name="img">
+        <fieldset>
+          <h2 class="fs-title">Profile Pic</h2>
+          <h3 class="fs-subtitle">lets put a face on this name</h3>
+          <label for="img">Upload Profile Pic:</label>
+          <input type="file" name="img">
+          <input type="button" name="previous" class="previous action-button" value="Previous" />
+          <input type="button" name="next" class="next action-button" value="Next" />
+          
+        </fieldset>
+        <fieldset>
+          <h2 class="fs-title">Personal Details</h2>
+          <h3 class="fs-subtitle">We would love to know more about you</h3>
+          <input type="text" name="fname" placeholder="First Name" />
+          <input type="text" name="lname" placeholder="Last Name" />
+          <input type="text" name="phone" placeholder="Phone" />
+          <textarea name="address" placeholder="Address"></textarea>
+          <input type="button" name="previous" class="previous action-button" value="Previous" />
+          <input type="submit" name="submit" class="submit action-button" value="Submit" />
+        </fieldset>
+      </form>
+</div>
 
-    <% if (typeof message !== "undefined") { %>
-    <div class="error-message"><%= message %></div>
-    <% } %>
-    <br><br>
-
-    <button>Create account</button>
-
-    <p class="account-message">
-        Do you already have an account?
-        <a href="/login">Login</a>
-    </p>
-</form>
-
-<a href="/auth/facebook">Signup With Facebook</a>
-<a href="/auth/google">Signup With Google</a>
-<a href="/auth/instagram">Signup With Instagram</a>
 

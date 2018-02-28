@@ -1,41 +1,43 @@
-<<<<<<< HEAD
+<div class="container-form">
+<form action="/login" method="POST" id="login-form">
 
-<form action="/auth/login" method="POST">
-  <div>
-      <label for="username">Username:</label>
-      <input type="text" name="username">
-  </div>
-  <div>
-      <label for="password">Password:</label>
-      <input type="password" name="password">
-  </div>
-  <% if (typeof message != "undefined") { %>
-      <div class="error-message"><%= message %></div>
-  <% } %>
-  <div>
-      <input type="submit" value="Log In">
-  </div>
-</form>
-<a href="/auth/facebook">Login With Facebook</a>
-<a href="/auth/google">Login With Google</a>
-=======
-<form action="/login" method="POST">
-    <div>
-        <label for="username">Username:</label>
-        <input type="text" name="username">
+            <div class="head">Login</div>
+            <div class="social">
+              <h4>Connect with</h4>
+              <ul>
+                <li> 
+                <a href="/auth/facebook" class="facebook">
+                  <span class="fa fa-facebook"></span>
+                </a>
+                </li>
+                <li>
+                  <a href="/auth/instagram" class="instagram">
+                    <span class="fa fa-instagram"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/auth/google" class="google-plus">
+                    <span class="fa fa-google-plus"></span>
+                  </a>
+                </li>
+              </ul>
+             </div>
+       
+             <div class="divider">
+               <span>or</span>
+             </div>
+              
+            <div class="input-field">
+              <label for="email"name="email">Email</label>
+              <input type="email" name="email" required="email" />
+              <label for="password">Password</label> 
+              <input type="password" name="password" required/>
+              <% if (typeof message != "undefined") { %>
+                <div class="error-message"><%= message %></div>
+            <% } %>
+              <input type="submit" value="Login" />
+              <p class="text-p">Don't have an account? <a href="signup">Sign up</a></p>
+            </div>
+        </form>
     </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" name="password">
-    </div>
-    <% if (typeof message != "undefined") { %>
-        <div class="error-message"><%= message %></div>
-    <% } %>
-    <div>
-        <input type="submit" value="Log In">
-    </div>
-  </form>
-  <a href="/auth/facebook">Login With Facebook</a>
-  <a href="/auth/google">Login With Google</a>
-  <a href="/auth/instagram">Login With Instagram</a>
->>>>>>> 5185e4a72a5dd1beb8d58c46d069f27608a96b7e
+      
