@@ -4,8 +4,8 @@
     //Se dibuja un mapa para que aparezca al cargar la página
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {
-        lat: 25, 
-        lng: -80,
+        lat: 19.432608,
+        lng: -99.133209
       },
       zoom: 15,
     });

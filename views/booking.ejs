@@ -1,20 +1,109 @@
+<div class="container-fluid booking-container">
+        <nav class="navbar navbar-default navbar-fixed-top" data-aos="fade-down" data-aos-duration="2600" data-aos-once="true" >
+                <div class="container-fluid">
+                    <div class="navbar-header"><a class="navbar-brand navbar-link" href="/index">
+                        <img src="../images/paw.png" alt="nav bar logo" class="logo-navbar"></a>
+                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav navbar-center">
+                            <li role="presentation"><a href="#">How it Works</a></li>
+                            <li role="presentation"><a href="#">Our Services</a></li>
+                            <li role="presentation"><a href="#">About Us</a></li>
+                        </ul>
+    
+                            <ul class="nav navbar-nav navbar-right">
+                            <li role="presentation"><a href="/signup">
+                              <button type="button" class="btn btn-danger">Find Sitters
+                                <span class="glyphicon glyphicon-search"></span> 
+                              </button>
+                              </a>
+                           </li>   <li role="presentation"><a href="/sitterSignup">
+                            <button type="button" class="btn btn-info">Become a Sitter
+                              <span class="glyphicon glyphicon-heart"></span> 
+                            </button>
+                            </a>
+                         </li>
+                            <li role="presentation"><a href="/login">
+                                 <button type="button" class="btn btn-danger">Login
+                                   <span class="glyphicon glyphicon-ok"></span> 
+                                 </button>
+                                 </a>
+                              </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+    
+        <div class="row">
+
+           <div class="col-md-2">
+                <div class="well">
+            
+                          <h3 align="center">Search </h3>
+                          <form class="form-horizontal">
+                             <div class="form-group">
+                                <label for="location1" class="control-label">Service Type</label>
+                                <select class="form-control" name="" id="serviceType">
+                                   <option value="">House Sitting</option>
+                                   <option value="">Dog Walking</option>
+                                </select>
+                             </div>
+                             <div class="form-group">
+                                <label for="type1" class="control-label">Location</label>
+                                <input type="text" class="form-control" id="gmapInput" placeholder="Enter Zip Code">
+                             </div>
+                             <div class="form-group">
+                                <label for="pricefrom" class="control-label">Min Price</label>
+                                <div class="input-group">
+                                   <div class="input-group-addon" id="basic-addon1">$</div>
+                                   <input type="text" class="form-control" id="pricefrom" aria-describedby="basic-addon1">
+                                </div>
+                             </div>
+                             <p class="text-center"><a href="#" class="btn btn-danger glyphicon glyphicon-search" role="button"></a></p>
+                          </form>
+                       </div>
+                    </div>
+               
+         
+           <!-- /.col-md-4 -->
+
+                     
 
 
-<div id="reviews">
-    <ul>
-        <% reviews.forEach(function(review){ %>
-        <li>
-        <p><%= review.user_id.displayName %></p>
-        <img src="<%= review.user_id.imgUrl%>" width="100px" alt="">
-        <p><%=review.rating%></p>
-        <p><%=review.body%></p>
-        <span>Post date: <%=review.created_at%></span>
-        </li>
-        <% }) %>
-    </ul>
-</div>
-    <div class="info"><h3>Find a sitter near you:</h3></div>
-    <label><input placeholder="Zip code or address" style="width:500px" id="gmapInput" type="text"/></label>
-    <div id="map"></div>
+
+           <div class="col-md-6">
+              <div id="reviews">
+                 <ul>
+                    <% reviews.forEach(function(review){ %>
+                    <li>
+                       <p><%= review.user_id.displayName %></p>
+                    <img src="<%= review.user_id.imgUrl%>" class="img-thumbnail rounded float-left" width="150px" height="150" alt="user image">
+                       <p><%=review.rating%></p>
+                       <p><%=review.body%></p>
+                       <span>Post date: <%=review.created_at%></span>
+                       <a href="#" class="btn btn-primary icon  pull-right">Book</a>
+                    </li>
+                    <hr class="style1">
+                    <br>
+                    <% }) %>
+                    <br>
+               
+                 </ul>
+              
+               
+              </div>
+           </div>
+           <!-- /.col-md-4 -->
 
 
+
+
+           <div class="col-md-4">
+              <div id="map"></div>
+           </div>
+           <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+     </div><!-- main container-->
+      
