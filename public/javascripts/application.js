@@ -1,3 +1,8 @@
+//nav bar animation 
+/* For mobile support, delet the 'mobile' */
+$(document).ready(function(){
+	AOS.init({ disable: '' });
+});
 
 //jQuery Form signup
 var current_fs, next_fs, previous_fs; //fieldsets
@@ -81,11 +86,6 @@ $(".submit").click(function(){
 	return false;
 })//ENDS jQuery Form-signup
 
-//nav bar animation 
-/* For mobile support, delet the 'mobile' */
-$(document).ready(function(){
-	AOS.init({ disable: '' });
-});
 
 //User Dashboard effect
 $(function(){

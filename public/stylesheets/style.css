@@ -258,8 +258,6 @@ form#login-form {
   float: left;
   width: 30.33%;
 	margin: 0 1%;
-
-
 }
 .social ul li a{
   display: inline-block;
@@ -359,7 +357,7 @@ form#login-form {
 /*************** SEARCH PAGE STYLES *****************************/
 #map{
   width: 100%;
-  height: 500px;
+  height: 100vh;
 }
 
 
@@ -376,7 +374,13 @@ form#login-form {
 }
 img { border: 0; max-width: 100%; }
 
-#topbar {
+.img-responsive{
+  width: 250px;
+  height: 250px;
+}
+
+
+.topbar {
   background:#fff;
   padding: 10px;
   text-align: left;
@@ -384,7 +388,7 @@ img { border: 0; max-width: 100%; }
   overflow: hidden;
 }
 
-#topbar a {
+.topbar a {
   color: #000;
   font-size:1.3em;
   line-height: 1.25em;
@@ -392,7 +396,7 @@ img { border: 0; max-width: 100%; }
   opacity: 0.5;
   font-weight: 500;
 }
-#topbar a:hover {
+.topbar a:hover {
   opacity: 1;
 }
 .icons {
@@ -434,123 +438,58 @@ img { border: 0; max-width: 100%; }
   margin: 22px 0;
   color: #555;
 }
-
-.center { display: block; text-align: center; }
-
-/** page structure **/
-#user-container {
-  
-  display: inline-block;
-  width: 700px;
-  margin: 0 auto;
- left:300px;
- padding-top:15px; 
- padding-left: 30px;
-}
-
-#content {
-  display: block;
-  width: 100%;
-  background: #fff;
-  padding: 35px 20px;
-  padding-bottom: 35px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-  height: 600px;
-}
-
-#userphoto {
-  float: right;
-  width: 350px;
-  height: 500px;
-  margin-right: 350px;
-  margin-top: 20px;
-  margin-bottom: 8px;
-}
-
-#userphoto img {
-height: 100%;
-width: 100%; 
-}
-
-/** profile nav links **/
-#profiletabs {
-  display: block;
-  margin-bottom: 4px;
-
-}
-
-#profiletabs ul { 
-  list-style: none; 
-  display: block; 
+.container-user{
   padding-top: 10px;
-  padding-left: 100px;
-  
- }
-
-#profiletabs ul li a { 
-  display: block;
-  float: left;
-  padding: 8px 5px;
-  font-size: 1.2em;
-  font-weight: bold;
-  background: #cee;
-  color: #666;
-  margin-right: 8px;
-  border: 1px solid #fff;
-  border-radius: 5px;
-
-}
-#profiletabs ul li a:hover {
-  text-decoration: none;
-  background: #dad7c2;
-  color: #565656;
 }
 
-#profiletabs ul li a.sel {
-  background: #fff;
-  border-color: #d1cdb5;
+.social-btn-holder{
+  padding:10px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+.social-btn-holder .btn-social{
+  font-size:12px;
+  font-weight:bold;
 }
 
-
-/** profile content sections **/
-.hidden {
-  display: none;
+.btn-social{
+  color: white;
+  opacity:0.9;
+}
+.btn-social:hover {
+  color: white;
+  opacity:1;
+}
+.btn-facebook {
+background-color: #3b5998;
+}
+.btn-twitter {
+background-color: #00aced;
+}
+.btn-linkedin {
+background-color:#0e76a8;
+}
+.btn-github{
+  background-color:#000000;
+}
+.btn-google {
+  background-color: #c32f10;
+}
+.btn-stackoverflow{
+  background-color: #D38B28;
 }
 
-.activity {
-  border-top:450px;
-  padding: 35px
-
+.btn-hackerrank{
+  background-color: #27AB5B;
 }
-
-.setting {
-  display: block;
-  font-weight: normal;
-  padding: 15px 3px;
-  border-top: 1px solid #d6d1af;
-  margin-bottom: 5px;
-}
-.setting span {
-  float: left; 
-  width: 250px;
-  font-weight: bold;
-}
-.setting span img { 
-  cursor: pointer;
+.btn-soundcloud{
+  background-color: #FF7202;
 }
 
 
-#transations {
-  display: block;
-  font-size: 1.1em;
-  font-weight: bold;
-}
 
-
-/** Review **/
-.rating > span:hover:before {
-  content: "\2605";
-  position: absolute;
+.centered-text{
+  text-align: center;
 }
 
 /********* Modal Chat *********/
@@ -590,6 +529,20 @@ width: 100%;
   text-decoration: none;
   cursor: pointer;
 }
+
+
+/*************** BOOKING PAGE STYLES *****************************/
+.booking-container{
+  box-sizing: border-box;
+  padding-top: 68px;
+}
+
+
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+}
+
+
 
 
 /** clearfix **/

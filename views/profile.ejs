@@ -1,5 +1,5 @@
 <div id="main-profile">
-        <div id="topbar">
+        <div class="topbar">
             <% if (user) { %>
           <li class="icons home">
               <a href="/">
@@ -15,6 +15,7 @@
           <img src="images/chat.png" id="myBtn">
         </li>
           </div>
+
         
           <!-- The Modal -->
          <div id="myModal" class="modal">
@@ -24,93 +25,72 @@
               <p>Some text in the Modal..</p>
             </div>
           </div>
-          
-          
-          <div id="user-container">
-            <div id="content" class="clearfix">
-              <h1>Username Dashboard</h1>
-        
-              <nav id="profiletabs">
-                <ul class="clearfix">
-                  <li><a href="#booking">Bookings</a></li>
-                  <li><a href="#activity" class="sel">Activity</a></li>
-                  <li><a href="#awards">Awards</a></li>
-                  <li><a href="#settings">Settings</a></li>
-                  <li><a href="#review">Review</a></li>
-                  <li><a href="#review">Sitters</a></li>
-                </ul>
-              </nav>
-              
-              <section id="booking" class="hidden">
-                <h4>Bookings:</h4>
-                
-                <p class="transations">24.02 - Booked a walking with  <strong>someusername</strong></p>
-                
-                <p class="transations">01.01 - Booked a sitting with  <strong>someusername</strong></p>
-                
-                
-               
-              </section>
-        
-              <section id="activity">
-                  <h4>Most recent actions:</h4>
-                
-                  <p class="transations">@10:15PM - Submitted a news article</p>
-                  
-                  <p class="transations">@9:50PM - Submitted a news article</p>
-                  
-                  <p class="transations">@8:15PM - Posted a comment</p>
-                  
-                  <p class="transations">@4:30PM - Added <strong>someusername</strong> as a friend</p>
-                  
-                  <p class="transations">@12:30PM - Submitted a news article</p>
-                
-              </section>
-              
-              <section id="awards" class="hidden">
-                <h4>Points Collected</h4>
-                
-                <ul id="award" class="clearfix">
-                  <li><a href="#"><img src="images/avatar.png" width="22" height="22"> 300 likes</a></li>
-                  <li><a href="#"><img src="images/avatar.png" width="22" height="22"> 123 likes</a></li>
-                  <li><a href="#"><img src="images/avatar.png" width="22" height="22"> 89 likes</a></li>
-                </ul>
-              </section>
-              
-              <section id="settings" class="hidden">
-                <h4>Edit your settings:</h4>
-                
-                <p class="setting"><span>E-mail Address <img src="images/edit.png" alt="*Edit*"></span> lolno@gmail.com</p>
-                
-                <p class="setting"><span>Change Password <img src="images/edit.png" alt="*Edit*"></span> Public</p>
-                
-                <p class="setting"><span>News Letter Frequency <img src="images/edit.png" alt="*Edit*"></span> Weekly</p>
-                
-                <p class="setting"><span>Cancel Account<img src="images/edit.png" alt="*Edit*"></span> None</p>
-              </section>
-        
-              <section id="review" class="hidden">
-                  <h4>Reviews:</h4>
-                <form action="/new" method="POST" id="new-review">
-                  <div class="rating">
-                      <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                  </div>
-                <label for="reviewText">Were you happy with the service provided? </label>
-                <input type="text" name="reviewText" maxlength="200"
-                  placeholder="Write about your experience" >
-                <label for="rating">Rate service: </label>
-                <input type="text" name="rating">
-          
-                <button class="button blue fright">Save review</button>
-              </form>
-        </section>
 
-        <section id="sitters" class="hidden">
-            <h4>some text</h4>
-            
-        </section>
-            </div><!-- end #content -->
-          </div><!-- end #user-container -->
-          <div id="userphoto">
-            <img src="images/slide3.jpeg" alt="avatar user"></div>
+      
+                <div class="container-user">
+                    <div class="row">
+                        <div class=" col-lg-offset-3 col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+                                                    <img class="img-circle img-responsive" src="<%= user.imgUrl %>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="centered-text col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+                                                
+                                                        <h2> <span itemprop="name"><%= user.displayName %></span></h2>
+                                                        <p itemprop="jobTitle"></p>
+                                                        <p><span itemprop="affiliation"><%= user.googleId %></span></p>
+                                                        <p>
+                                                            <i class="fa fa-map-marker"></i> <span itemprop="addressRegion"><%= user.address %></span>
+                                                        </p>
+                                                        <p itemprop="email"> <i class="fa fa-envelope"> </i> <a href="mailto:you@somedomain.com"><%= user.email %></a> </p>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="row">
+                                        <div id="social-links" class=" col-lg-12">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-3 social-btn-holder">
+                                                    <a class="btn btn-social btn-block btn-google"  href="/">
+                                                        <i class="fa fa-google"></i> Delete
+                                                    </a>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-3 social-btn-holder">
+                                                    <a title="twitter" class="btn btn-social btn-block btn-twitter" href="http://twitter.com/yourid">
+                                                        <i class="fa fa-twitter"></i> /Edit
+                                                    </a>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-3 social-btn-holder">
+                                                    <a title="github" class="btn btn-social btn-block btn-github"  href="http://github.com/yourid">
+                                                        <i class="fa fa-github"></i> /Review
+                                                    </a>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-3 col-md-2 col-lg-3 social-btn-holder">
+                                                    <a title="stackoverflow" class="btn btn-social btn-block btn-stackoverflow"href="http://stackoverflow.com/users/youruserid/yourid">
+                                                        <i class="fa fa-stack-overflow"></i> /yourid
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
         </div><!-- end #main -->
