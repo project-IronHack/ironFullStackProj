@@ -7,5 +7,4 @@ $(document).ready(function ($) {
         strengthButtonClass: 'button_strength',
         strengthButtonTextToggle: 'Hide Password'
     });
-
 });

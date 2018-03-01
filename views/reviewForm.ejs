@@ -1,17 +1,139 @@
-<div id="container">
-    <h2>Hi <%= user.displayName %>!</h2>
-  
-    <form action="/reviews/new" method="POST" id="new-review">
-      <label for="reviewText">Were you happy with the service provided? </label>
-      <textarea type="text" name="reviewText" maxlength="200"
-        placeholder="Write about your experience" ></textarea>
-      <label for="rating">Rate service: </label>
-      <input type="text" name="rating">
-
-      <button >Save review</button>
-    </form>
-  
-    <% if (typeof(errorMessage) != "undefined") { %>
+           
+<% if (typeof(errorMessage) != "undefined") { %>
       <div class="error-message"><%= errorMessage %></div>
     <% } %>
+  </div>
+
+
+  <div class="container">
+      <div class="row">
+          <h2>Hello <%= user.displayName %>!</h2>
+          <p>Please rate your last experience with Us.</p>
+         <table width="100%" border="0">
+         <div class="col-md-9 col-md-offset-0">
+          <tr><td width="77%">
+          <div class="">
+              <form class="form-horizontal" action="/reviews/new" id="new-review" method="post">
+            <fieldset>
+      
+              <!-- Name input-->
+              <div class="form-group">
+                <label class="col-md-3 control-label" for="name"></label>
+                <div class="col-md-9">
+                  <input id="sitterName" name="name" type="text" placeholder="Sitter Name" class="form-control">
+                </div>
+              </div>
+      
+          
+              <!-- Message body -->
+              <div class="form-group">
+                <label class="col-md-3 control-label" for="message">Your message</label>
+                <div class="col-md-9">
+                  <textarea class="form-control" id="messageBody" name="message" placeholder="Please enter your feedback here..." rows="5"></textarea>
+                </div>
+              </div>
+  
+  
+              <!-- Rating -->
+              <div class="form-group">
+                <label class="col-md-3 control-label" for="message">Your rating</label>
+                <div class="col-md-9">
+                    <div>
+                      <img class="responsive" src="" alt="happy face">                 
+                      </div>
+                </div>
+              </div>
+      </td>
+      <td align="center" valign="top" width="23%">
+              <!-- Form actions -->
+              <div class="form-group">
+                <div class="col-md-12 text-center">
+                  <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                  <button type="reset" class="btn btn-default btn-md">Clear</button>
+                </div>
+              </div>
+            </fieldset>
+            </form>
+          </div>
+      </div>
+      </td>
+      </tr>
+      </table>
+  </div>
+  
+  <div class="container">
+      <div class="row">
+          <h2>
+              Featured Testimonials</h2>
+          <div class="col-md-6">
+              <div class="blockquote-box clearfix">
+                  <div class="square pull-left">
+                      <img src="http://placehold.it/60/8e44ad/FFF&text=B" alt="" class="" />
+                  </div>
+                  <h4>
+                      John Doe</h4>
+                  <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+                      ante.
+                  </p>
+              </div>
+              <div class="blockquote-box blockquote-primary clearfix">
+                  <div class="square pull-left">
+                      <span class="glyphicon glyphicon-music glyphicon-lg"></span>
+                  </div>
+                  <h4>
+                      John Doe</h4>
+                  <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+                      ante. <a href="http://www.jquery2dotnet.com/search/label/jquery">jquery2dotnet</a>
+                  </p>
+              </div>
+              <div class="blockquote-box blockquote-success clearfix">
+                  <div class="square pull-left">
+                      <span class="glyphicon glyphicon-tree-conifer glyphicon-lg"></span>
+                  </div>
+                  <h4>
+                      John Doe</h4>
+                  <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+                      ante.
+                  </p>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="blockquote-box blockquote-info clearfix">
+                  <div class="square pull-left">
+                      <span class="glyphicon glyphicon-info-sign glyphicon-lg"></span>
+                  </div>
+                  <h4>
+                      John Doe</h4>
+                  <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+                      ante.
+                  </p>
+              </div>
+              <div class="blockquote-box blockquote-warning clearfix">
+                  <div class="square pull-left">
+                      <span class="glyphicon glyphicon-warning-sign glyphicon-lg"></span>
+                  </div>
+                  <h4>
+                      John Doe</h4>
+                  <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+                      ante.
+                  </p>
+              </div>
+              <div class="blockquote-box blockquote-danger clearfix">
+                  <div class="square pull-left">
+                      <span class="glyphicon glyphicon-record glyphicon-lg"></span>
+                  </div>
+                  <h4>
+                      John Doe</h4>
+                  <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+                      ante.
+                  </p>
+              </div>
+          </div>
+      </div>
   </div>
