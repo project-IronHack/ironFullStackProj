@@ -154,7 +154,13 @@ router.post("/sitterSignup", upload.fields([
           phone = req.body.phone,
           address = req.body.address,
           accountNum = req.body.accountNum,
-          payment = req.body.payment;
+          payment = req.body.payment,
+          imgUrl = req.files.img[0].path,
+          officialID = req.files.officialID[0].path,
+          criminalRecord = req.files.criminalRecord[0].path,
+          residenceProof = req.files.residenceProof[0].path,
+          reference1 = req.files.reference1[0].path,
+          reference2 = req.files.reference2[0].path;
 
     if(username === "" || password === ""){
         res.render("auth/sitterSignup", {message: "Indicate username and password"});
@@ -181,12 +187,24 @@ router.post("/sitterSignup", upload.fields([
           phone,
           address,
           accountNum,
-          payment
+          payment,
+          imgUrl,
+          officialID,
+          criminalRecord,
+          residenceProof,
+          reference1,
+          reference2,
        });
-       newSitter.save(err=>{
-           if (err) return res.render("auth/sitterSignup", { message: "Something went wrong" });
-            res.redirect("/profile");
-       });
+      
+       newSitter.save()
+        .then(() => {
+            console.log("conseguido!!!")
+            res.redirect("/profile")
+        })
+        .catch(err =>{
+            console.log(err)
+            res.render("auth/sitterSignup", { message: "Something went wrong" })
+        })
 
     });
 });

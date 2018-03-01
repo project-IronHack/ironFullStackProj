@@ -14,7 +14,11 @@ const sitterSchema = new Schema(
         googleID: String,
         instagramID: String,
         accountNum: String,
-        location: { type: { type: String }, coordinates: [Number] },
+        officialID: String,
+        criminalRecord: String,
+        residenceProof: String,
+        reference1: String,
+        reference2: String,
     },
     {
         timestamps:{
