@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Review = require("../models/Review");
 const User = require("../models/User");
+const Sitter = require("../models/Sitter");
 
 //ensure login
 const ensureLogin = require("connect-ensure-login");
@@ -10,13 +11,18 @@ const ensureLogin = require("connect-ensure-login");
 const passport = require("passport");
 
 router.get("/", (req,res)=>{
-    Review.find()
-        .populate("user_id")
+    // Review.find()
+    //     .populate("user_id")
+    //     .then(docs => {
+    //         res.render("booking", {reviews:docs})
+    //     })
+    //     .catch(err => console.log(err)); 
+    Sitter.find()
         .then(docs => {
             console.log(docs)
-            res.render("booking", {reviews:docs})
+            res.render("booking", {sitters:docs})
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log(err)); 
 });
 
 router.get("/new", ensureLogin.ensureLoggedIn(),(req, res)=>{
