@@ -125,23 +125,36 @@ router.get("/signup", (req,res, next)=>{
     });
 });
 
+router.get("/sitterSignup", (req,res, next)=>{
+    res.render("auth/sitterSignup");
+});
 
-
-router.post("/sitterSignup", upload.fields([{
-    name: 'img', maxCount: 1
-  }, {
-    name: 'officialID', maxCount: 1
-  }]),(req,res,next)=>{
-  //upload.single('img'), upload.single('officialID'), upload.single('criminalRecord'), upload.single('residenceProof'), upload.single('reference1'),  upload.single('reference2'), (req,res,next)=>{
-    //router.post("/sitterSignup", (req,res,next)=>{
-    //console.log(req.body)
-    console.log("bliss", req.files)
+router.post("/sitterSignup", upload.fields([
+    {
+        name: 'img', maxCount: 1
+    }, {
+        name: 'officialID', maxCount: 1
+    }, {
+        name: 'criminalRecord', maxCount: 1
+    }, {
+        name: 'residenceProof', maxCount: 1
+    }, {
+        name: 'reference1', maxCount: 1
+    }, {
+        name: 'reference2', maxCount: 1
+    }    
+    ]),(req,res,next)=>{
+    console.log("files", req.files)
+    console.log("body", req.body)
     const displayName = req.body.displayName;
           username = req.body.username,
-          email = req.body.email;
-          password = req.body.password;
-          cpassword = req.body.cpassword;
-          //img = req.file.path;
+          email = req.body.email,
+          password = req.body.password,
+          cpassword = req.body.cpassword,
+          phone = req.body.phone,
+          address = req.body.address,
+          accountNum = req.body.accountNum,
+          payment = req.body.payment;
 
     if(username === "" || password === ""){
         res.render("auth/sitterSignup", {message: "Indicate username and password"});
@@ -167,7 +180,8 @@ router.post("/sitterSignup", upload.fields([{
           email,
           phone,
           address,
-          imgUrl: img,
+          accountNum,
+          payment
        });
        newSitter.save(err=>{
            if (err) return res.render("auth/sitterSignup", { message: "Something went wrong" });
@@ -175,10 +189,6 @@ router.post("/sitterSignup", upload.fields([{
        });
 
     });
-});
-
-router.get("/sitterSignup", (req,res, next)=>{
-    res.render("auth/sitterSignup");
 });
 
 module.exports = router;
