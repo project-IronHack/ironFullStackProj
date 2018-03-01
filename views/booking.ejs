@@ -1,3 +1,4 @@
+
 <div class="container-fluid booking-container">
         <nav class="navbar navbar-default navbar-fixed-top" data-aos="fade-down" data-aos-duration="2600" data-aos-once="true" >
                 <div class="container-fluid">
@@ -51,7 +52,7 @@
                              </div>
                              <div class="form-group">
                                 <label for="type1" class="control-label">Location</label>
-                                <input type="text" class="form-control" id="gmapInput" placeholder="Enter Zip Code">
+                                <input type="text" class="form-control" id="gmapInput" placeholder="Enter Address">
                              </div>
                              <div class="form-group">
                                 <label for="pricefrom" class="control-label">Min Price</label>
@@ -73,15 +74,13 @@
 
 
            <div class="col-md-6">
-              <div id="reviews">
+              <div id="sitters">
                  <ul>
-                    <% reviews.forEach(function(review){ %>
+                    <% sitters.forEach(function(sitter){ %>
                     <li>
-                       <p><%= review.user_id.displayName %></p>
-                    <img src="<%= review.user_id.imgUrl%>" class="img-thumbnail rounded float-left" width="150px" height="150" alt="user image">
-                       <p><%=review.rating%></p>
-                       <p><%=review.body%></p>
-                       <span>Post date: <%=review.created_at%></span>
+                       <p><b><%= sitter.displayName %></b></p>
+                    <img src="<%= sitter.imgUrl%>" class="img-thumbnail rounded float-left" width="150px" height="150" alt="user image">
+                       <p><b>Address: </b><%=sitter.address%></p>
                        <a href="#" class="btn btn-primary icon  pull-right">Book</a>
                     </li>
                     <hr class="style1">
@@ -106,4 +105,12 @@
         </div>
         <!-- /.row -->
      </div><!-- main container-->
-      
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+     <script type="text/javascript">
+        var mySitters = <%- JSON.stringify(sitters) %>;
+      </script>
+
+      <script src="javascripts/mapWithRequests.js" ></script>

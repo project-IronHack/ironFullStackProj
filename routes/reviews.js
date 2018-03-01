@@ -11,10 +11,16 @@ const ensureLogin = require("connect-ensure-login");
 const passport = require("passport");
 
 router.get("/", (req,res)=>{
-    Review.find()
-        .populate("user_id")
+    // Review.find()
+    //     .populate("user_id")
+    //     .then(docs => {
+    //         res.render("booking", {reviews:docs})
+    //     })
+    //     .catch(err => console.log(err)); 
+    Sitter.find()
         .then(docs => {
-            res.render("booking", {reviews:docs})
+            console.log(docs)
+            res.render("booking", {sitters:docs})
         })
         .catch(err => console.log(err)); 
 });
