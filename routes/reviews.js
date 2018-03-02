@@ -9,14 +9,17 @@ const ensureLogin = require("connect-ensure-login");
 
 //passport
 const passport = require("passport");
+router.get("/log", (req,res)=>{
+    Review.find()
+        .populate("user_id")
+        .then(docs => {
+            res.render("reviews", {sitters:docs, logged: req.user})
+        })
+        .catch(err => console.log(err)); 
+    
+});
 
 router.get("/", (req,res)=>{
-    // Review.find()
-    //     .populate("user_id")
-    //     .then(docs => {
-    //         res.render("booking", {reviews:docs})
-    //     })
-    //     .catch(err => console.log(err)); 
     Sitter.find() 
         .then(docs => {
             console.log(docs)
@@ -25,12 +28,6 @@ router.get("/", (req,res)=>{
         .catch(err => console.log(err)); 
 });
 router.post("/", (req,res)=>{
-    // Review.find()
-    //     .populate("user_id")
-    //     .then(docs => {
-    //         res.render("booking", {reviews:docs})
-    //     })
-    //     .catch(err => console.log(err)); 
     Sitter.find({payment: { $gt: 200}})
         .then(docs => {
             console.log(docs)
@@ -63,7 +60,7 @@ router.route('/:id')
 			if (error) {
 				next(error);
 			} else {
-				res.render('publicProfile', {user});
+				res.render('sitter/sitterProfile', {user});
 			}
 		})
 	})
@@ -113,7 +110,9 @@ router.route('/:id/delete')
 	    	res.redirect('/')
 	    }
     });
-	});
+    });
+    
+
 
 
 
