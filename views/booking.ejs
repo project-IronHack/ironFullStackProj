@@ -9,13 +9,13 @@
                     </div>
                     <div class="collapse navbar-collapse" id="navcol-1">
                         <ul class="nav navbar-nav navbar-center">
-                            <li role="presentation"><a href="#">How it Works</a></li>
-                            <li role="presentation"><a href="#">Our Services</a></li>
+                            <li role="presentation"><a href="/">How it Works</a></li>
+                            <li role="presentation"><a href="/">Our Services</a></li>
                             <li role="presentation"><a href="#">About Us</a></li>
                         </ul>
     
                             <ul class="nav navbar-nav navbar-right">
-                            <li role="presentation"><a href="/signup">uuy
+                            <li role="presentation"><a href="/signup">
                               <button type="button" class="btn btn-danger">Find Sitters
                                 <span class="glyphicon glyphicon-search"></span> 
                               </button>
@@ -62,36 +62,57 @@
                                    <input type="text" class="form-control" id="pricefrom" aria-describedby="basic-addon1">
                                 </div>
                              </div>
+                             <div class="form-group">
+                                    <label for="date" class="control-label">Start Date</label>
+                                    <div class="input-group">
+                                       <input id="startDate" type="date">
+                                    </div>
+                                 </div>
+                                 <div class="form-group">
+                                        <label for="date" class="control-label">End Date</label>
+                                        <div class="input-group">
+                                           <input id="endDate" type="date">
+                                        </div>
+                                     </div>
+
                              <p class="text-center"><a href="#" class="btn btn-danger glyphicon glyphicon-search" role="button"></a></p>
                           </form>
                        </div>
                     </div>
                
-         
-           <!-- /.col-md-4 -->
+      
 
-                    
+           <!-- /.col-md-4 -->       
            <div class="col-md-6">
               <div id="sitters">
                  <ul>
                     <% sitters.forEach(function(sitter){ %>
                     <li>
-                       <p><b><%= sitter.displayName %></b></p>
-                    <img src="<%= sitter.imgUrl%>" class="img-thumbnail rounded float-left" width="150px" height="150" alt="user image">
-                       <p><b>Address: </b><%=sitter.address%></p>
-                       <a href="#" class="btn btn-primary icon  pull-right">Book</a>
+                   
+                    <img src="<%=sitter.imgUrl%>" class="img-sitter" alt="Sitter image" />
+                       <p><a href=“/<%=sitter._id%>“><b><%= sitter.displayName %></b></a></p>
+                       <p><b>Address:</b><%=sitter.address%></p>
+                       <p><b>Review:</b><%=sitter.review%></p>
+                       <div class="caption">
+                       <h4 class="pull-right"><span>$35</span> per night</h4>
+                       </div>
+                       <a href="#" class="btn btn-primary icon">Book</a>
+                       <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star"></span>
+                       <hr class="style1">
                     </li>
-                    <hr class="style1">
+                   
                     <br>
                     <% }) %>
                     <br>
-               
                  </ul>
               
-               
               </div>
            </div>
-           <!-- /.col-md-4 -->
+           <!-- /.col-md-4 profile sitters-->
 
 
            <div class="col-md-4">

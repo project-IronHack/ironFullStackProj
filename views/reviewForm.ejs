@@ -1,67 +1,77 @@
-           
 <% if (typeof(errorMessage) != "undefined") { %>
-      <div class="error-message"><%= errorMessage %></div>
-    <% } %>
+  <div class="error-message"><%= errorMessage %></div>
+  <% } %>
   </div>
-
-
-  <div class="container">
-      <div class="row">
-          <h2>Hello <%= user.displayName %>!</h2>
-          <p>Please rate your last experience with Us.</p>
-         <table width="100%" border="0">
-         <div class="col-md-9 col-md-offset-0">
-          <tr><td width="77%">
-          <div class="">
-              <form class="form-horizontal" action="/reviews/new" id="new-review" method="post">
-            <fieldset>
-      
-              <!-- Name input-->
-              <div class="form-group">
-                <label class="col-md-3 control-label" for="name"></label>
-                <div class="col-md-9">
-                  <input id="sitterName" name="name" type="text" placeholder="Sitter Name" class="form-control">
-                </div>
-              </div>
-      
-          
-              <!-- Message body -->
-              <div class="form-group">
-                <label class="col-md-3 control-label" for="message">Your message</label>
-                <div class="col-md-9">
-                  <textarea class="form-control" id="messageBody" name="message" placeholder="Please enter your feedback here..." rows="5"></textarea>
-                </div>
-              </div>
-  
-  
-              <!-- Rating -->
-              <div class="form-group">
-                <label class="col-md-3 control-label" for="message">Your rating</label>
-                <div class="col-md-9">
-                    <div>
-                      <img class="responsive" src="" alt="happy face">                 
+ 
+  <div class="container-form">
+     
+          <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                <div class="well well-sm">
+                  <form class="form-horizontal" action="/reviews/new" id="new-review" method="POST">
+                  <fieldset>
+                    
+                    <legend class="text-center">Hello <%= user.displayName %>!</legend>
+                    <legend class="text-center">Please rate your last experience with Us.</legend>
+            
+                    <!-- Name input-->
+                    <div class="form-group">
+                      <label class="col-md-3 control-label" for="name">Sitter Name</label>
+                      <div class="col-md-9">
+                        <input id="sitterName" name="name" type="text" placeholder="Sitter Name" class="form-control">
                       </div>
+                    </div>
+            
+                    <!-- Email input-->
+                    <div class="form-group">
+                      <label class="col-md-3 control-label" for="email">Your E-mail</label>
+                      <div class="col-md-9">
+                        <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+                      </div>
+                    </div>
+            
+                    <!-- Message body -->
+                    <div class="form-group">
+                      <label class="col-md-3 control-label" for="message">Your message</label>
+                      <div class="col-md-9">
+                        <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="message">Your rating</label>
+                        <div class="col-md-9">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        </select>
+                        </div>
+                        </div>
+            
+                    <!-- Form actions -->
+                    <div class="form-group">
+                      <div class="col-md-12 text-right">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                      </div>
+                    </div>
+                  </fieldset>
+                  </form>
                 </div>
               </div>
-      </td>
-      <td align="center" valign="top" width="23%">
-              <!-- Form actions -->
-              <div class="form-group">
-                <div class="col-md-12 text-center">
-                  <button type="submit" class="btn btn-primary btn-md">Submit</button>
-                  <button type="reset" class="btn btn-default btn-md">Clear</button>
-                </div>
-              </div>
-            </fieldset>
-            </form>
           </div>
-      </div>
-      </td>
-      </tr>
-      </table>
-  </div>
+        </div>
+
+    
+
+
   
-  <
-          </div>
-      </div>
-  </div>
+
+    
+
+  
+   
+             
+ 
