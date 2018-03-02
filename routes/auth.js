@@ -155,12 +155,12 @@ router.post("/sitterSignup", upload.fields([
           address = req.body.address,
           accountNum = req.body.accountNum,
           payment = req.body.payment,
-          imgUrl = req.files.img[0].path,
-          officialID = req.files.officialID[0].path,
-          criminalRecord = req.files.criminalRecord[0].path,
-          residenceProof = req.files.residenceProof[0].path,
-          reference1 = req.files.reference1[0].path,
-          reference2 = req.files.reference2[0].path;
+          imgUrl =  `/uploads/${req.files.img[0].filename}` || '',
+          officialID = `/uploads/${req.files.officialID[0].filename}` || '',
+          criminalRecord = `/uploads/${req.files.criminalRecord[0].filename}` || '',
+          residenceProof = `/uploads/${req.files.residenceProof[0].filename}` || '',
+          reference1 = `/uploads/${req.files.reference1[0].filename}` || '',
+          reference2 = `/uploads/${req.files.reference2[0].filename}` || '';
 
     if(username === "" || password === ""){
         res.render("auth/sitterSignup", {message: "Indicate username and password"});
