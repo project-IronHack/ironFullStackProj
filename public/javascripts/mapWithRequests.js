@@ -1,5 +1,6 @@
+$("#sitters").hide()
 $(document).ready(function(){
-  $("#sitters").hide()
+
 
      //Se inicializa una variable loc para guardar el location
      var loc = {};

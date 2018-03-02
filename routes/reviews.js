@@ -10,11 +10,14 @@ const ensureLogin = require("connect-ensure-login");
 //passport
 const passport = require("passport");
 router.get("/log", (req,res)=>{
-    console.log("hai")
-    Review.find({}, (err, docs)=>{
-        console.log(docs)
-        res.render("reviews", {reviews:docs, logged: req.user})
-    })
+    Review.find() 
+        .populate("sitter_id")
+        .then(docs => {
+            console.log(docs)
+            res.render("reviews", {reviews:docs, logged: req.user})
+        })
+        .catch(err => console.log(err)); 
+   
     
 });
 
