@@ -159,7 +159,10 @@ border: none;
 #userPic {
   margin-left: 30px;
 }
-
+.bodyForm{
+  border: 1px solid grey;
+  border-radius: 10px;
+}
 
 /************* Signup Form ***************/
 .container-form {

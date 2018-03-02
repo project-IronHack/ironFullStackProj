@@ -1,14 +1,43 @@
-<div class="main-profile" style="background-image:url(../images/bg-profile.jpg); height:100vh;">
-<div class="container-form">
-        <form action="/users/<%= user._id %>/edit" method="POST" id="editform" enctype="multipart/form-data">
-            
-                  <input type="file" name="img">
-                  <input type="text" name="displayName" placeholder="<%= user.displayName%>" >
-                  <input type="submit" class="action-button" value="Submit" >
-              </form>
-        </div>
-</div>
+<div class="bodyForm">
+<!-- Card -->
+<div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                <div class="card">
 
-        
-        
-        
+                                <!-- Card body -->
+                                <div class="card-body">
+                            
+                                    <!-- Default form subscription -->
+                                    <form action="/users/<%= user._id %>/edit" method="POST" id="editform" enctype="multipart/form-data">
+                                        <p class="h4 text-center py-4"></p>
+                            
+                                        <!-- Default input name -->
+                                        <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Your Name</label>
+                                        <input type="text" id="defaultFormCardNameEx" class="form-control" placeholder="<%= user.displayName%>">
+                                      
+                                        
+                                        <br>
+                            
+                                        <!-- Default input email -->
+                                        <label for="defaultFormCardEmailEx" class="grey-text font-weight-light">New Pic</label>
+                                        <input id="defaultFormCardEmailEx" class="form-control" type="file" name="img">
+                                      
+                            
+                                        <div class="text-center py-4 mt-3">
+                                            <button class="btn btn-danger" type="submit">Send</button>
+                                        </div>
+                                    </form>
+                                    <!-- Default form subscription -->
+                            
+                                </div>
+                                <!-- Card body -->
+                            
+                            </div>
+                            <!-- Card -->
+                                                  
+                        
+                        
+                        </div>   
+
+            </div>
+        </div>
