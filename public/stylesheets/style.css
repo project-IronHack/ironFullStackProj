@@ -97,16 +97,6 @@ body{
   margin: auto auto;
 }
 
-/**** Carousel-inner imgs ajust ******/
- /* .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-     display: block;
-     height: auto;
-     max-width: 100%;
-     line-height: 1;
-     width: 100%;
-} */
-
-
 
 section {
   padding-top: 100px;
@@ -156,7 +146,7 @@ border: none;
   border-radius: 100px;
 }
 .profile-circle{
-  background-image:url("../images/user.jpeg")
+  
 }
 
 .marketing{
@@ -164,17 +154,7 @@ border: none;
   padding-top: 50px;
 }
 
-.footer-bottom {
-  background-color: #15224f;
-  min-height: 30px;
 
-}
-.copyright {
-  color: #fff;
-  line-height: 30px;
-  min-height: 30px;
-  padding: 7px 0;
-}
 
 
 
@@ -721,8 +701,6 @@ margin-left: 15px;
 .transparent {
   opacity: 0.2;
 }
-
-
 
 /* Center align the text within the three columns over the carousel */
 .marketing .col-lg-4 {
