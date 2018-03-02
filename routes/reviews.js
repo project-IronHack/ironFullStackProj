@@ -17,7 +17,21 @@ router.get("/", (req,res)=>{
     //         res.render("booking", {reviews:docs})
     //     })
     //     .catch(err => console.log(err)); 
-    Sitter.find()
+    Sitter.find() 
+        .then(docs => {
+            console.log(docs)
+            res.render("booking", {sitters:docs, logged: req.user})
+        })
+        .catch(err => console.log(err)); 
+});
+router.post("/", (req,res)=>{
+    // Review.find()
+    //     .populate("user_id")
+    //     .then(docs => {
+    //         res.render("booking", {reviews:docs})
+    //     })
+    //     .catch(err => console.log(err)); 
+    Sitter.find({payment: { $gt: 200}})
         .then(docs => {
             console.log(docs)
             res.render("booking", {sitters:docs, logged: req.user})
@@ -96,7 +110,7 @@ router.route('/:id/delete')
 	    if (error) {
 	    	next(error)
 	    } else {
-	    	res.redirect('/profile')
+	    	res.redirect('/')
 	    }
     });
 	});

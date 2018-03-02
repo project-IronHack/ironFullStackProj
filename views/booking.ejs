@@ -85,7 +85,7 @@
                  <ul>
                     <% sitters.forEach(function(sitter){ %>
                     <li>
-                       <p><a href="/<%=sitter._id%>"><b><%= sitter.displayName %></b></a></p>
+                       <p><a href="sitters/<%= sitter._id%>" ><b><%= sitter.displayName %></b></a></p>
                     <img src="<%= sitter.imgUrl%>" class="img-thumbnail rounded float-left" width="150px" height="150" alt="user image">
                        <p><b>Address: </b><%=sitter.address%></p>
                        <a href="" class="btn btn-primary icon  pull-right">Book</a>

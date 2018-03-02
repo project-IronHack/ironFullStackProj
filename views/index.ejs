@@ -25,12 +25,21 @@
                         </button>
                         </a>
                      </li>
-                        <li role="presentation"><a href="/login">
-                             <button type="button" class="btn btn-danger">Login
-                               <span class="glyphicon glyphicon-ok"></span> 
-                             </button>
-                             </a>
-                          </li>
+                     <% if (!logged){%>
+                      <li role="presentation"><a href="/login">
+                           <button type="button" class="btn btn-danger">Login
+                             <span class="glyphicon glyphicon-ok"></span> 
+                           </button>
+                           </a>
+                        </li>
+                        <%} else {%>
+                          <li role="presentation"><a href="/logout">
+                              <button type="button" class="btn btn-success">Logout
+                                <span class="glyphicon glyphicon-ok"></span> 
+                              </button>
+                              </a>
+                           </li>
+                          <% } %>
                     </ul>
                 </div>
             </div>

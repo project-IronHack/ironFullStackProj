@@ -67,7 +67,9 @@ router.post("/login", passport.authenticate("local", {
     failureRedirect: "/login",
     failureFlash: true,
     passReqToCallback: true
-}));
+}), (req,res) => {
+ console.log(req.body)
+});
 
 //logout
 router.get("/logout", (req,res)=>{

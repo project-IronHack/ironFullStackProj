@@ -19,7 +19,8 @@ const sitterSchema = new Schema(
         residenceProof: String,
         reference1: String,
         reference2: String,
-        reviews: Array,
+        payment: String,
+        accountNum: String
     },
     {
         timestamps:{
