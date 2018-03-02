@@ -16,6 +16,8 @@ body{
 		box-sizing: border-box;
 }
 
+
+
 /************* Main Container Index ************/
 .container {
      position: relative;
@@ -51,7 +53,7 @@ body{
     }
     /* Custom navbar and Mobile nav settings */
      .navbar-default {
-         background-color:#3F5666;
+      
          border-color:#2F3440;
          border-radius:0px;
          font-size: 1.2em;
@@ -63,14 +65,14 @@ body{
     }
      .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
          color:#eee;
-         background-color:#2F3440;
+       
          transition:all 0.7s;
 				 font-size:21px;
 				 font-family: 'Medula One', cursive;
     }
      .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
          color:#eee;
-         background-color:#2F3440;
+      
          transition:all 0.7s;
          font-size:15px;
     }
@@ -365,7 +367,7 @@ form#login-form {
 
 
 /************************************ PROFILE PAGE STYLES *****************************************/
-#main-profile { 
+.main-profile { 
 
   color: #313131;
   font-size: 62.5%; 
@@ -421,7 +423,7 @@ img { border: 0; max-width: 100%; }
 }
 
 /** typography **/
-#main-profile h1 {
+.main-profile h1 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2.5em;
   line-height: 1.5em;
@@ -433,7 +435,7 @@ img { border: 0; max-width: 100%; }
  
 }
 
-#main-profile p {
+.main-profile p {
   display: block;
   font-size: 1.4em;
   line-height: 1.55em;
@@ -462,9 +464,6 @@ img { border: 0; max-width: 100%; }
 .btn-social:hover {
   color: white;
   opacity:1;
-}
-.btn-facebook {
-background-color: #3b5998;
 }
 
 .btn-delete {
@@ -537,8 +536,10 @@ hr.style1{
 }
 
 /*************************** PAYMENT PAGE STYLES *******************************************/
-.container-fluid {
+/** pages that will share the same background **/
+.container-fluid.card {
   background-image:url("../images/bg-profile.jpg");
+  height: 100vh;
 }
 .creditCardForm {
   max-width: 700px;
@@ -612,8 +613,7 @@ hr.style1{
   width: 100%;
   margin-top: 3px;
   font-size: 24px;
-  background-color: #2ec4a5;
-  color: white;
+  background-color: #eef;
 }
 
 .creditCardForm .payment select {
@@ -625,100 +625,9 @@ hr.style1{
   opacity: 0.2;
 }
 
-@media(max-width: 650px) {
-  .creditCardForm .owner,
-  .creditCardForm .CVV,
-  .creditCardForm #expiration-date,
-  .creditCardForm #credit_cards {
-      width: 100%;
-  }
-  .creditCardForm #credit_cards {
-      text-align: left;
-  }
-}
 
-.rating-container {
-  position: relative;
-  vertical-align: middle;
-  display: inline-block;
-  color: #e3e3e3;
-  overflow: hidden;
-}
 
-.rating-container:before {
-  content: attr(data-content);
-}
 
-.rating-container .rating-stars {
-  position: absolute;
-  left: 0;
-  top: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  color: #fde16d;
-  transition: all 0.25s ease-out;
-  -o-transition: all 0.25s ease-out;
-  -moz-transition: all 0.25s ease-out;
-  -webkit-transition: all 0.25s ease-out;
-}
-
-.rating-container .rating-stars:before {
-  content: attr(data-content);
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
-}
-
-.rating-container-rtl {
-  position: relative;
-  vertical-align: middle;
-  display: inline-block;
-  overflow: hidden;
-  color: #fde16d;
-}
-
-.rating-container-rtl:before {
-  content: attr(data-content);
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
-}
-
-.rating-container-rtl .rating-stars {
-  position: absolute;
-  left: 0;
-  top: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  color: #e3e3e3;
-  transition: all 0.25s ease-out;
-  -o-transition: all 0.25s ease-out;
-  -moz-transition: all 0.25s ease-out;
-  -webkit-transition: all 0.25s ease-out;
-}
-
-.rating-container-rtl .rating-stars:before {
-  content: attr(data-content);
-}
-
-/**
-* Rating sizes
-*/
-.rating-xl {
-  font-size: 4.89em;
-}
-
-.rating-lg {
-  font-size: 3.91em;
-}
-
-.rating-md {
-  font-size: 3.13em;
-}
-
-.rating-sm {
-  font-size: 2.5em;
-}
-
-.rating-xs {
-  font-size: 2em;
-}
 
 
 
