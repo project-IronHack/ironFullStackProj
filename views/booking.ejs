@@ -26,12 +26,21 @@
                             </button>
                             </a>
                          </li>
+                         <% if (!logged){%>
                             <li role="presentation"><a href="/login">
                                  <button type="button" class="btn btn-danger">Login
                                    <span class="glyphicon glyphicon-ok"></span> 
                                  </button>
                                  </a>
                               </li>
+                              <%} else {%>
+                                <li role="presentation"><a href="/logout">
+                                    <button type="button" class="btn btn-success">Logout
+                                      <span class="glyphicon glyphicon-ok"></span> 
+                                    </button>
+                                    </a>
+                                 </li>
+                                <% } %>
                         </ul>
                     </div>
                 </div>
@@ -88,6 +97,7 @@
                  <ul>
                     <% sitters.forEach(function(sitter){ %>
                     <li>
+<<<<<<< HEAD
                    
                     <img src="<%=sitter.imgUrl%>" class="img-sitter" alt="Sitter image" />
                        <p><a href=“/<%=sitter._id%>“><b><%= sitter.displayName %></b></a></p>
@@ -103,6 +113,12 @@
                       <span class="fa fa-star checked"></span>
                       <span class="fa fa-star"></span>
                        <hr class="style1">
+=======
+                       <p><a href="/<%=sitter._id%>"><b><%= sitter.displayName %></b></a></p>
+                    <img src="<%= sitter.imgUrl%>" class="img-thumbnail rounded float-left" width="150px" height="150" alt="user image">
+                       <p><b>Address: </b><%=sitter.address%></p>
+                       <a href="" class="btn btn-primary icon  pull-right">Book</a>
+>>>>>>> a102b7fcf2ddf721269afe63a3675fbcb5d0a018
                     </li>
                    
                     <br>
