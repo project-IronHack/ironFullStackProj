@@ -368,7 +368,6 @@ form#login-form {
 
 /************************************ PROFILE PAGE STYLES *****************************************/
 .main-profile { 
-
   color: #313131;
   font-size: 62.5%; 
   line-height: 1; 
@@ -534,10 +533,31 @@ img { border: 0; max-width: 100%; }
 hr.style1{
 	border-top: 1px solid #8c8b8b;
 }
+.img-sitter
+{
+    border-radius: 50%;
+    width:100px;  
+    float: left;
+}
+#sitters ul li{
+  list-style: none;
+  padding-top:10px;
+}
+#sitters p{
+  padding-left: 40px;
+}
+.checked {
+  color: orange;
+}
+.pull-right span {
+  color: orange;
+  font-weight: 700;
+  font-size: 1em;
+}
 
 /*************************** PAYMENT PAGE STYLES *******************************************/
 /** pages that will share the same background **/
-.container-fluid.card {
+.container-fluid.card{
   background-image:url("../images/bg-profile.jpg");
   height: 100vh;
 }
@@ -627,10 +647,41 @@ hr.style1{
 
 
 
+/* Center align the text within the three columns over the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
 
 
+/* Featurettes sitter profile public
+------------------------- */
 
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
 
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
 
+.centered-form{
+	margin-top: 60px;
+}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
 
 
