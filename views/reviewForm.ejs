@@ -1,7 +1,6 @@
-<% if (typeof(errorMessage) != "undefined") { %>
-  <div class="error-message"><%= errorMessage %></div>
-  <% } %>
-  </div>
+  <div class="main-profile">
+    <br><br>
+     
   <div class="container-form">
   <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -32,37 +31,11 @@
         </div>
      </div>
      <button>Submit</button>
-     <% if (typeof(errorMessage) != "undefined") { %>
-     <div class="error-message"><%= errorMessage %></div>
-     <% } %>
+    </div>
   </div>
-  <div class="container-form">
-  <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-  <div class="well well-sm">
-  <form class="form-horizontal" action="/reviews/new" id="new-review" method="POST">
-  <fieldset>
-  <legend class="text-center">Hello <%= user.displayName %>!</legend>
-  <legend class="text-center">Please rate your last experience with Us.</legend>
-  <!-- Name input-->
-  <div class="form-group">
-     <label class="col-md-3 control-label" for="name">Sitter Name</label>
-     <div class="col-md-9">
-        <input id="sitterName" name="sittername" type="text" placeholder="Sitter Name" class="form-control">
-     </div>
-  </div>
-  <!-- Rating input-->
-  <div class="form-group">
-     <label class="col-md-3 control-label" for="email">Rate service: </label>
-     <div class="col-md-9">
-        <input id="email" name="rating" type="text" placeholder="Rate from 1 to 5" class="form-control">
-     </div>
-  </div>
-  <!-- Message body -->
-  <div class="form-group">
-     <label class="col-md-3 control-label" for="message">Your message</label>
-     <div class="col-md-9">
-        <textarea class="form-control" id="message" name="reviewText" placeholder="Please enter your message here..." rows="5"></textarea>
-     </div>
-  </div>
-  <button>Submit</button>
+</div>
+</div>
+</div>
+
+
+    
