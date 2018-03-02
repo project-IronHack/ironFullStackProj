@@ -84,28 +84,28 @@
                     </div>
                
       
-
+                    <%var count = 35%>
            <!-- /.col-md-4 -->       
            <div class="col-md-6">
               <div id="sitters">
                  <ul>
                     <% sitters.forEach(function(sitter){ %>
                     <li>
-                   
+                       <p><a href="sitters/<%= sitter._id%>" ><b><%= sitter.displayName %></b></a></p>
+                  
                     <img src="<%=sitter.imgUrl%>" class="img-sitter" alt="Sitter image" />
-                       <p><a href=“/<%=sitter._id%>“><b><%= sitter.displayName %></b></a></p>
                        <p><b>Address:</b><%=sitter.address%></p>
-                       <p><b>Review:</b><%=sitter.review%></p>
                        <div class="caption">
-                       <h4 class="pull-right"><span>$35</span> per night</h4>
+                       <h4 class="pull-right"><span><%=count%></span> per night</h4>
                        </div>
-                       <a href="payment" class="btn btn-primary icon" id="bookSitter">Book</a>
+                       <a href="/payment" class="btn btn-primary icon" id="bookSitter">Book</a>
                        <span class="fa fa-star checked"></span>
                       <span class="fa fa-star checked"></span>
                       <span class="fa fa-star checked"></span>
                       <span class="fa fa-star checked"></span>
                       <span class="fa fa-star"></span>
                        <hr class="style1">
+                       <%count += 15%>
                     </li>
                    
                     <br>

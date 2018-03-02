@@ -17,7 +17,7 @@ const passport = require("passport");
 //facebook login
 router.get("/auth/facebook", passport.authenticate("facebook", {scope: 'email'}));
 router.get("/auth/facebook/callback", passport.authenticate("facebook", {
-    successRedirect: "/profile",
+    successRedirect: "/reviews",
     failureRedirect: "/login"
 }));
 //facebook login
@@ -28,16 +28,16 @@ router.get("/auth/google", passport.authenticate("google", {
     "https://www.googleapis.com/auth/plus.profile.emails.read"]
 }));
 router.get("/auth/google/callback", passport.authenticate("google", {
-    failureRedirect: "/",
-    successRedirect: "/profile"
+    failureRedirect: "/login",
+    successRedirect: "/reviews"
 }));
 //google login
 
 //instagram login
 router.get("/auth/instagram", passport.authenticate("instagram"));
 router.get("/auth/instagram/callback", passport.authenticate("instagram", {
-    successRedirect: "/profile",
-    failureRedirect: '/'
+    successRedirect: "/reviews",
+    failureRedirect: '/login'
   }));
 //instagram login
 
@@ -67,7 +67,9 @@ router.post("/login", passport.authenticate("local", {
     failureRedirect: "/login",
     failureFlash: true,
     passReqToCallback: true
-}));
+}), (req,res) => {
+ console.log(req.body)
+});
 
 //logout
 router.get("/logout", (req,res)=>{
