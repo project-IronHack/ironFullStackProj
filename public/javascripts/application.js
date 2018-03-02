@@ -87,24 +87,7 @@ $(".submit").click(function(){
 })//ENDS jQuery Form-signup
 
 
-//User Dashboard effect
-$(function(){
-  $('#profiletabs ul li a').on('click', function(e){
-    e.preventDefault();
-    var newcontent = $(this).attr('href');
-    
-    $('#profiletabs ul li a').removeClass('sel');
-    $(this).addClass('sel');
-    
-    $('#content section').each(function(){
-      if(!$(this).hasClass('hidden')) { $(this).addClass('hidden'); }
-    });
-    
-    $(newcontent).removeClass('hidden');
-  });
-});
-
-// Modal Chat
+// MODAL CHAT
 var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
@@ -129,4 +112,67 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+//CREDIT CARD VALIDATION WITH 
+$(function() {
+	var owner = $('#owner');
+	var cardNumber = $('#cardNumber');
+	var cardNumberField = $('#card-number-field');
+	var CVV = $("#cvv");
+	var mastercard = $("#mastercard");
+	var confirmButton = $('#confirm-purchase');
+	var visa = $("#visa");
+	var amex = $("#amex");
+
+	//calling Payform.js library to format and validate the payment fields.
+	cardNumber.payform('formatCardNumber');
+	CVV.payform('formatCardCVC');
+
+	//Check if the card is either Visa, MasterCard
+//check for every time a new character is typed in with jQuery keyup() event listener.
+
+	cardNumber.keyup(function() {
+
+			amex.removeClass('transparent');
+			visa.removeClass('transparent');
+			mastercard.removeClass('transparent');
+
+			if ($.payform.validateCardNumber(cardNumber.val()) == false) {
+					cardNumberField.addClass('has-error');
+			} else {
+					cardNumberField.removeClass('has-error');
+					cardNumberField.addClass('has-success');
+			}
+
+			if ($.payform.parseCardType(cardNumber.val()) == 'visa') {
+					mastercard.addClass('transparent');
+					amex.addClass('transparent');
+			} else if ($.payform.parseCardType(cardNumber.val()) == 'amex') {
+					mastercard.addClass('transparent');
+					visa.addClass('transparent');
+			} else if ($.payform.parseCardType(cardNumber.val()) == 'mastercard') {
+					amex.addClass('transparent');
+					visa.addClass('transparent');
+			}
+	});
+//check that input name is at least 5 characters long
+	confirmButton.click(function(e) {
+
+			e.preventDefault();
+
+			var isCardValid = $.payform.validateCardNumber(cardNumber.val());
+			var isCvvValid = $.payform.validateCardCVC(CVV.val());
+
+			if(owner.val().length < 5){
+					alert("Wrong owner name");
+			} else if (!isCardValid) {
+					alert("Wrong card number");
+			} else if (!isCvvValid) {
+					alert("Wrong CVV");
+			} else {
+					// Everything is correct. Add your form submission code here.
+					alert("Everything is correct");
+			}
+	});
+});
 

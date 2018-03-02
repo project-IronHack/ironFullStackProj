@@ -11,12 +11,18 @@ const ensureLogin = require("connect-ensure-login");
 const passport = require("passport");
 
 router.get("/", (req,res)=>{
+    // Review.find()
+    //     .populate("user_id")
+    //     .then(docs => {
+    //         res.render("booking", {reviews:docs})
+    //     })
+    //     .catch(err => console.log(err)); 
     Sitter.find()
-    .then(docs => {
-        console.log(docs)
-        res.render("booking", {sitters:docs})
-    })
-    .catch(err => console.log(err)); 
+        .then(docs => {
+            console.log(docs)
+            res.render("booking", {sitters:docs})
+        })
+        .catch(err => console.log(err)); 
 });
 
 router.get("/new", ensureLogin.ensureLoggedIn(),(req, res)=>{
