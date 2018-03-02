@@ -40,6 +40,7 @@ $("#sitters").hide();
            position: loc,
            map: map,
            animation: google.maps.Animation.BOUNCE,
+           
        });
        $("#sitters").show();
        //cada que escriben
