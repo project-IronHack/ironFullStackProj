@@ -4,9 +4,6 @@ const User = require("../models/User");
 var multer  = require('multer');
 var upload = multer({ dest: `./public/uploads/` });
 
-router.get('/edit', (req, res, next) => {
-  res.render('editUser');
-});
 
 router.route('/:id/edit')
 	.get((req, res, next) => {

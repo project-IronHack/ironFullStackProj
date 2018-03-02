@@ -1,0 +1,8 @@
+<div class="container-form">
+        <form action="/sitters/<%= sitter._id %>/edit" method="POST" id="editform" enctype="multipart/form-data">
+            
+                  <input type="file" name="img">
+                  <input type="text" name="displayName" placeholder="<%= sitter.displayName%>" >
+                  <input type="submit" class="action-button" value="Submit" >
+              </form>
+        </div>
