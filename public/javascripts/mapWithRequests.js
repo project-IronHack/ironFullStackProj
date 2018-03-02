@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+  $("#sitters").hide()
 
      //Se inicializa una variable loc para guardar el location
      var loc = {};
@@ -40,8 +40,9 @@ $(document).ready(function(){
            position: loc,
            map: map,
            animation: google.maps.Animation.BOUNCE,
+           
        });
-
+       $("#sitters").show()
        //cada que escriben
        getLocations(mySitters,map)
 
