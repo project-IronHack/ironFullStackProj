@@ -20,7 +20,7 @@ router.get("/", (req,res)=>{
     Sitter.find()
         .then(docs => {
             console.log(docs)
-            res.render("booking", {sitters:docs})
+            res.render("booking", {sitters:docs, logged: req.user})
         })
         .catch(err => console.log(err)); 
 });
@@ -42,6 +42,64 @@ router.post("/new", (req,res)=>{
     res.redirect("/");
    }); 
 });
+
+router.route('/:id')
+	.get((req, res, next) => {
+		User.findById(req.params.user_id, (error, user) => {
+			if (error) {
+				next(error);
+			} else {
+				res.render('publicProfile', {user});
+			}
+		})
+	})
+	.post((req, res, next) => {
+
+		User.findById(req.params.id, (error, user) => {
+			if (error) {
+				next(error);
+			} else {
+				// console.log("8==========D")
+				// console.log(req.body);
+				// let coord = [req.body.longitude, req.body.latitude];
+				// console.log(req.body)
+				
+				// restaurant.name        = req.body.name;
+				// restaurant.description = req.body.description;
+				// restaurant.location.type='Point';
+				// restaurant.location.coordinates=coord;
+				user.save((error) => {
+		  		if (error) {
+		  			next(error);
+		  		} else {
+		  			res.redirect('/');
+		  		}
+		  	})
+			}
+		})
+	});
+
+router.route('/:id/edit')
+	.get((req, res, next) => {
+		User.findById(req.params.id, (error, user) => {
+			if (error) {
+				next(error);
+			} else {
+				res.render('user/update', { user });
+			}
+		})
+	});
+
+router.route('/:id/delete')
+	.get((req, res, next) => {
+		User.remove({ _id: req.params.id }, function(error, user) {
+	    if (error) {
+	    	next(error)
+	    } else {
+	    	res.redirect('/profile')
+	    }
+    });
+	});
 
 
 

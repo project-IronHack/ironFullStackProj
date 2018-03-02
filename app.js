@@ -33,17 +33,18 @@ passport.use(new FbStrategy({
     clientID: "643701199133873",
     clientSecret: "27ed3bbb47291be2a240d905c7787b29",
     callbackURL: "/auth/facebook/callback",
-    profileFields: ['email', "displayName"]
+    profileFields: ['email', "displayName", "picture"]
 },
     (accessToken, refreshToken, profile, done)=>{
   User.findOne({facebookID:profile.id}, (err,user)=>{
-      console.log(profile);
+      console.log(profile._json.picture.data.url);
       if(err) return done(err);
       if(user) return done(null,user);
       const newUser = new User({
           facebookID:profile.id,
           displayName:profile.displayName,
-          email:profile.emails.length > 0 ? profile.emails[0].value : null
+          email:profile.emails.length > 0 ? profile.emails[0].value : null,
+          imgUrl: profile.photos[0].value,
       });
       newUser.save((err)=>{
         if(err) return done(err);
