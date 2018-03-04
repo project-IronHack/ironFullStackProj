@@ -1,152 +1,128 @@
-
-    <main class="container">
-       <nav class="navbar navbar-default navbar-fixed-top" data-aos="fade-down" data-aos-duration="2600" data-aos-once="true" >
-            <div class="container-fluid">
-                <div class="navbar-header"><a class="navbar-brand navbar-link" href="/">
-                    <img src="../images/paw.png" alt="nav bar logo" class="logo-navbar"></a>
+<main class="container">
+    <nav class="navbar navbar-default navbar-fixed-top" data-aos="fade-down" data-aos-duration="2600" data-aos-once="true" >
+       <div class="container-fluid">
+          <div class="navbar-header"><a class="navbar-brand navbar-link" href="/">
+             <img src="../images/paw.png" alt="nav bar logo" class="logo-navbar"></a>
              <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                </div>
-                <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="nav navbar-nav navbar-center">
-                        <li role="presentation"><a href="#how">How it Works</a></li>
-                        <li role="presentation"><a href="#">Our Services</a></li>
-      
-                    </ul>
-
-                        <ul class="nav navbar-nav navbar-right">
-                        <li role="presentation"><a href="/signup">
-                          <button type="button" class="btn btn-danger">Find Sitters
-                            <span class="glyphicon glyphicon-search"></span> 
-                          </button>
-                          </a>
-                       </li>   <li role="presentation"><a href="/sitterSignup">
-                        <button type="button" class="btn btn-info">Become a Sitter
-                          <span class="glyphicon glyphicon-heart"></span> 
-                        </button>
-                        </a>
-                     </li>
-                     <% if (!logged){%>
-                      <li role="presentation"><a href="/login">
-                           <button type="button" class="btn btn-danger">Login
-                             <span class="glyphicon glyphicon-ok"></span> 
-                           </button>
-                           </a>
-                        </li>
-                        <%} else {%>
-                          <li role="presentation"><a href="/logout">
-                              <button type="button" class="btn btn-success">Logout
-                                <span class="glyphicon glyphicon-ok"></span> 
-                              </button>
-                              </a>
-                           </li>
-                          <% } %>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    
-     <div class="container-fluid">
-        <div class="img-container">
-            <img src="images/logo.png" class="logo"></img>
           </div>
-         
+          <div class="collapse navbar-collapse" id="navcol-1">
+             <ul class="nav navbar-nav navbar-center">
+                <li role="presentation"><a href="#how">How it Works</a></li>
+                <li role="presentation"><a href="#">Our Services</a></li>
+             </ul>
+             <ul class="nav navbar-nav navbar-right">
+                <li role="presentation"><a href="/signup">
+                   <button type="button" class="btn btn-danger">Find Sitters
+                   <span class="glyphicon glyphicon-search"></span> 
+                   </button>
+                   </a>
+                </li>
+                <li role="presentation"><a href="/sitterSignup">
+                   <button type="button" class="btn btn-info">Become a Sitter
+                   <span class="glyphicon glyphicon-heart"></span> 
+                   </button>
+                   </a>
+                </li>
+                <% if (!logged){%>
+                <li role="presentation"><a href="/login">
+                   <button type="button" class="btn btn-danger">Login
+                   <span class="glyphicon glyphicon-ok"></span> 
+                   </button>
+                   </a>
+                </li>
+                <%} else {%>
+                <li role="presentation"><a href="/logout">
+                   <button type="button" class="btn btn-success">Logout
+                   <span class="glyphicon glyphicon-ok"></span> 
+                   </button>
+                   </a>
+                </li>
+                <% } %>
+             </ul>
+          </div>
+       </div><!-- End of container-fluid -->
+    </nav>
 
-       <img src="../images/hero.jpg" class="hero" alt="dogs picture" />   
-      
-   
-   
-    
-     </div><!-- end of container hero and perks-->
+    <div class="container-fluid">
+       <div class="img-container">
+          <img src="images/logo.png" class="logo" alt="pet inn logo" />
+       </div>
+       <img src="../images/hero.jpg" class="hero" alt="hero dogs picture" />   
+    </div><!-- end of container hero and logo-->
+
+
     <br /><br /><br /><br /><br /><br />
-  
-     <div class="container marketing" id="how">
-              <div class="row">
-          <div class="col-lg-4">
-            <img class="img-circle" src="images/search.png" alt="Generic placeholder image" width="140" height="140">
-            <h2>Seach</h2>
-            <p>Read verified reviews and pick the perfect sitter close to your location.</p>
-           
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <img class="img-circle" src="images/pay.png" alt="Generic placeholder image" width="140" height="140">
-            <h2>Book and Pay</h2>
-            <p>Book and pay securely through the Paw Inn website.</p>
-            
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <img class="img-circle" src="images/care.png" alt="Generic placeholder image" width="140" height="140">
-            <h2>Relax</h2>
-            <p>Get 24/7 support, and high qualified sitters.</p>
-           
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-        </div>
-   
 
-        <section id="carousel">    				
-            <div class="container">
-              <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                          <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
-                  <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
-                    <!-- Carousel indicators -->
-                            <ol class="carousel-indicators">
+    <div class="container marketing" id="how">
+       <div class="row">
+          <div class="col-lg-4">
+             <img class="img-circle" src="images/search.png" alt="Generic placeholder image" width="140" height="140">
+             <h2>Seach</h2>
+             <p>Read verified reviews and pick the perfect sitter close to your location.</p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+             <img class="img-circle" src="images/pay.png" alt="Generic placeholder image" width="140" height="140">
+             <h2>Book and Pay</h2>
+             <p>Book and pay securely through the Paw Inn website.</p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+             <img class="img-circle" src="images/care.png" alt="Generic placeholder image" width="140" height="140">
+             <h2>Relax</h2>
+             <p>Get 24/7 support, and high qualified sitters.</p>
+          </div><!-- /.col-lg-4 -->
+       </div><!-- /.row -->
+    </div><!-- /.container marketing -->
+    
+
+    <section id="carousel">
+       <div class="container">
+          <div class="row">
+             <div class="col-md-8 col-md-offset-2">
+                <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
+                <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
+                   <!-- Carousel indicators -->
+                   <ol class="carousel-indicators">
                       <li data-target="#fade-quote-carousel" data-slide-to="0"></li>
                       <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
                       <li data-target="#fade-quote-carousel" data-slide-to="2" class="active"></li>
-                              <li data-target="#fade-quote-carousel" data-slide-to="3"></li>
-                              <li data-target="#fade-quote-carousel" data-slide-to="4"></li>
-                              <li data-target="#fade-quote-carousel" data-slide-to="5"></li>
-                    </ol>
-                   
-                    <div class="carousel-inner">
-                      <div class="item">
-                            <div class="profile-circle" style="background-image:url(images/img4.jpeg);"></div>
-                        <blockquote>
-                          <p>My Pet Inn sitter sent me updates throughout the day and took care of my dog as if she were her own.  – Marinna F.</p>
-                        </blockquote>	
-                      </div>
-                      <div class="item">
-                          <div class="profile-circle" style="background-image:url(images/img5.jpeg);"></div>
-                        <blockquote>
-                          <p>Mary Kathryn were welcoming and provided great fun, photos and environment for Lulu. It was special to watch her play with other Goldens and see her make friends in a new area.</p>
-                        </blockquote>
-                      </div>
+                      <li data-target="#fade-quote-carousel" data-slide-to="3"></li>
+                   </ol>
+                   <div class="carousel-inner">
                       <div class="active item">
-                          <div class="profile-circle" style="background-image:url(images/user.jpeg);"></div>
-                        <blockquote>
+                         <div class="profile-circle" style="background-image:url(images/img4.jpeg);"></div>
+                         <blockquote>
+                            <p>My Pet Inn sitter sent me updates throughout the day and took care of my dog as if she were her own.  – Marinna F.</p>
+                         </blockquote>
+                      </div>
+                      <div class="item">
+                         <div class="profile-circle" style="background-image:url(images/img5.jpeg);"></div>
+                         <blockquote>
+                            <p>Mary Kathryn were welcoming and provided great fun, photos and environment for Lulu. It was special to watch her play with other Goldens and see her make friends in a new area.</p>
+                         </blockquote>
+                      </div>
+                      <div class="item">
+                         <div class="profile-circle" style="background-image:url(images/user.jpeg);"></div>
+                         <blockquote>
                             <p>Great experience with Emily! She sent text and photo updates. Freckles was in good hands!</p>
-                         
-                        </blockquote>
+                         </blockquote>
                       </div>
-                              <div class="item">
-                                  <div class="profile-circle" style="background-image:url(images/man.jpg);"></div>
-                          <blockquote>
-                              <p>Brian is a very compassionate and organized man. My dogs love hanging out with him when I'm off at work, and he keeps me updated on their health and behaviorism when I pick them up.</p>
-                          
-                        </blockquote>
+                      <div class="item">
+                         <div class="profile-circle" style="background-image:url(images/man.jpg);"></div>
+                         <blockquote>
+                            <p>Brian is a very compassionate and organized man. My dogs love hanging out with him when I'm off at work, and he keeps me updated on their health and behaviorism when I pick them up.</p>
+                         </blockquote>
                       </div>
-                
-                    </div>
-                  </div>
-                </div>							
-              </div>
-            </div>
-          </section>
+                   </div><!-- end of carousel-inner -->
+                </div><!-- end of carousel slide-->
+             </div><!-- end of columns-->
+          </div><!-- end of row-->
+       </div><!-- end of container-->
+    </section><!-- end of section carousel-->
 
+ </main><!-- end of main container-->
 
-   </main>
-     <!-- end of main container-->
-   <div id="footer">
-        <center><p class="footer-block">©Pet Inn, All rights reserved |Created with love by Deb & Ori</p></center>
-        <p></p>
-      </div>
-   
-  
- 
-  
-     
-
-    
-     
-  
+ <div id="footer">
+    <center>
+       <p class="footer-block">©Pet Inn, All rights reserved 2018 | Created with love by Deb & Ori</p>
+    </center>
+ </div><!-- end of footer container-->

@@ -1,136 +1,117 @@
-
 <div class="container-fluid booking-container">
         <nav class="navbar navbar-default navbar-fixed-top" data-aos="fade-down" data-aos-duration="2600" data-aos-once="true" >
-                <div class="container-fluid">
-                    <div class="navbar-header"><a class="navbar-brand navbar-link" href="/">
-                        <img src="../images/paw.png" alt="nav bar logo" class="logo-navbar"></a>
+           <div class="container-fluid">
+              <div class="navbar-header"><a class="navbar-brand navbar-link" href="/">
+                 <img src="../images/paw.png" alt="nav bar logo" class="logo-navbar"></a>
                  <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
-                     <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="navcol-1">
-                        <ul class="nav navbar-nav navbar-center">
-                            <li role="presentation"><a href="/">How it Works</a></li>
-                            <li role="presentation"><a href="/">Our Services</a></li>
-                            <li role="presentation"><a href="#">About Us</a></li>
-                        </ul>
-    
-                            <ul class="nav navbar-nav navbar-right">
-                            <li role="presentation"><a href="/signup">
-                              <button type="button" class="btn btn-danger">Find Sitters
-                                <span class="glyphicon glyphicon-search"></span> 
-                              </button>
-                              </a>
-                           </li>   <li role="presentation"><a href="/sitterSignup">
-                            <button type="button" class="btn btn-info">Become a Sitter
-                              <span class="glyphicon glyphicon-heart"></span> 
-                            </button>
-                            </a>
-                         </li>
-                         <% if (!logged){%>
-                            <li role="presentation"><a href="/login">
-                                 <button type="button" class="btn btn-danger">Login
-                                   <span class="glyphicon glyphicon-ok"></span> 
-                                 </button>
-                                 </a>
-                              </li>
-                              <%} else {%>
-                                <li role="presentation"><a href="/logout">
-                                    <button type="button" class="btn btn-success">Logout
-                                      <span class="glyphicon glyphicon-ok"></span> 
-                                    </button>
-                                    </a>
-                                 </li>
-                                <% } %>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-    
+                 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+              </div>
+              <div class="collapse navbar-collapse" id="navcol-1">
+                 <ul class="nav navbar-nav navbar-center">
+                    <li role="presentation"><a href="/">How it Works</a></li>
+                    <li role="presentation"><a href="/">Our Services</a></li>
+                 </ul>
+                 <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a href="/signup">
+                       <button type="button" class="btn btn-danger">Find Sitters
+                       <span class="glyphicon glyphicon-search"></span> 
+                       </button>
+                       </a>
+                    </li>
+                    <li role="presentation"><a href="/sitterSignup">
+                       <button type="button" class="btn btn-info">Become a Sitter
+                       <span class="glyphicon glyphicon-heart"></span> 
+                       </button>
+                       </a>
+                    </li>
+                    <% if (!logged){%>
+                    <li role="presentation"><a href="/login">
+                       <button type="button" class="btn btn-danger">Login
+                       <span class="glyphicon glyphicon-ok"></span> 
+                       </button>
+                       </a>
+                    </li>
+                    <%} else {%>
+                    <li role="presentation"><a href="/logout">
+                       <button type="button" class="btn btn-success">Logout
+                       <span class="glyphicon glyphicon-ok"></span> 
+                       </button>
+                       </a>
+                    </li>
+                    <% } %>
+                 </ul>
+              </div>
+           </div>
+        </nav><!-- end of nav bar-->
+
         <div class="row">
-
            <div class="col-md-2">
-                <div class="well">
-            
-                          <h3 align="center">Search </h3>
-                          <form class="form-horizontal">
-                             <div class="form-group">
-                                <label for="location1" class="control-label">Service Type</label>
-                                <select class="form-control" name="" id="serviceType">
-                                   <option value="">House Sitting</option>
-                                   <option value="">Dog Walking</option>
-                                </select>
-                             </div>
-                            
-                             <div class="form-group">
-                                    <label for="date" class="control-label">Start Date</label>
-                                    <div class="input-group">
-                                       <input id="startDate" type="date">
-                                    </div>
-                                 </div>
-                                 <div class="form-group">
-                                        <label for="date" class="control-label">End Date</label>
-                                        <div class="input-group">
-                                           <input id="endDate" type="date">
-                                        </div>
-                                     </div>
-                                     <div class="form-group">
-                                            <label for="type1" class="control-label">Location</label>
-                                            <input type="text" class="form-control" id="gmapInput" placeholder="Enter Address">
-                                         </div>
-
-                            
-                          </form>
+              <div class="well">
+                 <h3 align="center">Search </h3>
+                 <form class="form-horizontal">
+                    <div class="form-group">
+                       <label for="location1" class="control-label">Service Type</label>
+                       <select class="form-control" name="" id="serviceType">
+                          <option value="">House Sitting</option>
+                          <option value="">Dog Walking</option>
+                       </select>
+                    </div>
+                    <div class="form-group">
+                       <label for="date" class="control-label">Start Date</label>
+                       <div class="input-group">
+                          <input id="startDate" type="date">
                        </div>
                     </div>
-               
-      
-                    <%var count = 35%>
+                    <div class="form-group">
+                       <label for="date" class="control-label">End Date</label>
+                       <div class="input-group">
+                          <input id="endDate" type="date">
+                       </div>
+                    </div>
+                    <div class="form-group">
+                       <label for="type1" class="control-label">Location</label>
+                       <input type="text" class="form-control" id="gmapInput" placeholder="Enter Address">
+                    </div>
+                 </form>
+              </div><!-- end of well -->
+           </div><!-- end of column 2 -->
+           <%var count = 35%>
            <!-- /.col-md-4 -->       
            <div class="col-md-6">
               <div id="sitters">
                  <ul>
                     <% sitters.forEach(function(sitter){ %>
                     <li>
-                       <p><a href="reviews/log" ><b><%= sitter.displayName %></b></a></p>
-                  
-                    <img src="<%=sitter.imgUrl%>" class="img-sitter" alt="Sitter image" />
+                       <p><a href="sitters/<%= sitter._id%>" ><b><%= sitter.displayName %></b></a></p>
+                       <img src="<%=sitter.imgUrl%>" class="img-sitter" alt="Sitter Image profile" />
                        <p><b>Address:</b><%=sitter.address%></p>
                        <div class="caption">
-                       <h4 class="pull-right"><span><%=count%></span> per night</h4>
+                          <h4 class="pull-right"><span><%=count%></span> per night</h4>
                        </div>
                        <a href="/payment" class="btn btn-primary icon" id="bookSitter">Book</a>
                        <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star"></span>
+                       <span class="fa fa-star checked"></span>
+                       <span class="fa fa-star checked"></span>
+                       <span class="fa fa-star checked"></span>
+                       <span class="fa fa-star"></span>
                        <hr class="style1">
                        <%count += 15%>
                     </li>
-                   
                     <br>
                     <% }) %>
                     <br>
                  </ul>
-              
               </div>
-           </div>
-           <!-- /.col-md-4 profile sitters-->
-
-
+           </div><!-- /.col-md-4 profile sitters-->
            <div class="col-md-4">
               <div id="map"></div>
-           </div>
-           <!-- /.col-md-4 -->
-        </div>
-        <!-- /.row -->
-     </div><!-- main container-->
+           </div><!-- end of col-md-4 -->
+        </div><!-- end of row -->
+     </div><!-- end of container-fluid booking-container -->
+    
      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-
      <script type="text/javascript">
         var mySitters = <%- JSON.stringify(sitters) %>;
-      </script>
-
-      <script src="javascripts/mapWithRequests.js" ></script>
+     </script>
+     <script src="javascripts/mapWithRequests.js" ></script>
