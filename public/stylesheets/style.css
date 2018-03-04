@@ -593,8 +593,7 @@ img {
 	height: 30px;
 	width: 30px;
 	position: absolute;
-	top: 2px;
-	list-style: none;
+  list-style: none;
 }
 
 .home {
@@ -602,7 +601,7 @@ img {
 }
 
 .logout {
-	left: 90px;
+	left: 80px;
 }
 
 .chat {
