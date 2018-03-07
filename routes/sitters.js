@@ -4,6 +4,17 @@ const Sitter = require("../models/Sitter");
 var multer  = require('multer');
 var upload = multer({ dest: `./public/uploads/` });
 
+router.route('/:id')
+	.get((req, res, next) => {
+		Sitter.findById(req.params.id, (error, sitter) => {
+			if (error) {
+				next(error);
+			} else {
+				res.render('sitter/sitterProfile', { sitter });
+			}
+		})
+  });
+
 router.route('/:id/edit')
 	.get((req, res, next) => {
 		Sitter.findById(req.params.id, (error, sitter) => {

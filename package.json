@@ -19,6 +19,8 @@
     "express-ejs-layouts": "~2.2.0",
     "express-session": "^1.15.6",
     "flash": "^1.1.0",
+    "jquery": "^3.3.1",
+    "jquery-ui-dist": "^1.12.1",
     "mongo-connect": "0.0.6",
     "mongoose": "^4.8.7",
     "morgan": "~1.7.0",
@@ -30,6 +32,7 @@
     "passport-instagram": "^1.0.0",
     "passport-local": "^1.0.0",
     "passport-oauth2": "^1.4.0",
+    "payform": "^1.2.2",
     "serve-favicon": "~2.3.2"
   },
   "devDependencies": {

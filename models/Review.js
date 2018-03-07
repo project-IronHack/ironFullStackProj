@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const reviewSchema = new Schema({
     body: {type: String, required: [true, "Review can't be empty"]},
     user_id: {type: Schema.Types.ObjectId, ref: "User"},
-    sitter_id: {type: Schema.Types.ObjectId, ref: "Sitter"},
+    sitterName: String
     },
     { timestamps: { 
         createdAt: "created_at", 

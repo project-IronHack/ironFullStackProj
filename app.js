@@ -168,6 +168,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/dist/jquery', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
+app.use('/dist/jquery-ui', express.static(path.join(__dirname, 'node_modules/jquery-ui-dist')));
+
+app.use('/dist/payform', express.static(path.join(__dirname, 'node_modules/payform/dist')));
 app.use(layouts);
 app.set("layout", "layout");
 
