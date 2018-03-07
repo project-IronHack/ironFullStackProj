@@ -29,6 +29,17 @@ const passport = require("passport");
 
 const FbStrategy = require('passport-facebook').Strategy;
 
+passport.serializeUser((user,cb)=>{
+  cb(null, user._id);
+});
+
+passport.deserializeUser((id, cb)=>{
+  User.findOne({"_id":id}, (err,user)=>{
+    if(err) return cb(err);
+    cb(null, user);
+  })
+});
+
 passport.use(new FbStrategy({
     clientID: "643701199133873",
     clientSecret: "27ed3bbb47291be2a240d905c7787b29",
@@ -130,16 +141,7 @@ app.use(session({
 }));
 //passport session
 //before
-passport.serializeUser((user,cb)=>{
-  cb(null, user._id);
-});
 
-passport.deserializeUser((id, cb)=>{
-  User.findOne({"_id":id}, (err,user)=>{
-    if(err) return cb(err);
-    cb(null, user);
-  })
-});
 
 //flash
 app.use(flash());
